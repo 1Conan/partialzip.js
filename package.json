@@ -1,0 +1,33 @@
+{
+  "name": "partialzip",
+  "version": "0.0.1",
+  "description": "Download files from ZIPs without downloading the whole file",
+  "main": "dist/index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "1Conan",
+  "license": "MIT",
+  "dependencies": {
+    "node-fetch": "^2.2.0"
+  },
+  "devDependencies": {
+    "@types/node-fetch": "^2.1.2",
+    "tslint": "^5.11.0",
+    "tslint-config-airbnb": "^5.9.2",
+    "typescript": "^2.9.2"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/1Conan/node-partialzip.git"
+  },
+  "keywords": [
+    "partial",
+    "zip",
+    "partialzip"
+  ],
+  "bugs": {
+    "url": "https://github.com/1Conan/node-partialzip/issues"
+  },
+  "homepage": "https://github.com/1Conan/node-partialzip#readme"
+}
