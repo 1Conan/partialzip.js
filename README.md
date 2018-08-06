@@ -1,5 +1,7 @@
 # PartialZip
 
+PartialZip allows you to fetch files from ZIP urls without downloading the whole file. (Might work with file urls idfk)
+
 Central Directory parsing stuff (mostly) taken from [yauzl](https://github.com/thejoshwolfe/yauzl)
 
 ---
