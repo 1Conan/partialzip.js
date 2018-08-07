@@ -5,23 +5,18 @@ export default class {
   public fileCount: number;
   public files: any;
 
-  private fileRead: number;
   private url: string;
   private length: number;
   private cdRange: ICDRange;
-  private readEntryCursor: number;
-  private cdData: any;
 
   constructor(options: IOptions) {
     this.url = options.url;
     this.length = 0;
     this.fileCount = 0;
-    this.fileRead = 0;
     this.cdRange = {
       end: 0,
       start: 0,
     };
-    this.readEntryCursor = 0;
   }
 
   public async init() {
@@ -81,6 +76,8 @@ export default class {
     const data = await this.partialGet(start, end);
 
     const files = bufferSplit(data, Buffer.from('\x50\x4b\x01\x02'));
+
+    this.fileCount = files.length;
 
     for (const file of files) {
       const fileInfo = {
