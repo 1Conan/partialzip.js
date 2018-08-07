@@ -1,6 +1,6 @@
 {
   "name": "partialzip",
-  "version": "0.0.1",
+  "version": "1.0.0",
   "description": "Download files from ZIPs without downloading the whole file",
   "main": "dist/index.js",
   "scripts": {
