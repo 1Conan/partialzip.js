@@ -2,12 +2,9 @@
 export default class {
     fileCount: number;
     files: any;
-    private fileRead;
     private url;
     private length;
     private cdRange;
-    private readEntryCursor;
-    private cdData;
     constructor(options: IOptions);
     init(): Promise<void>;
     list(): string[];

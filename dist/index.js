@@ -45,12 +45,10 @@ var default_1 = /** @class */ (function () {
         this.url = options.url;
         this.length = 0;
         this.fileCount = 0;
-        this.fileRead = 0;
         this.cdRange = {
             end: 0,
             start: 0,
         };
-        this.readEntryCursor = 0;
     }
     default_1.prototype.init = function () {
         return __awaiter(this, void 0, void 0, function () {
@@ -131,6 +129,7 @@ var default_1 = /** @class */ (function () {
                     case 1:
                         data = _a.sent();
                         files = bufferSplit(data, Buffer.from('\x50\x4b\x01\x02'));
+                        this.fileCount = files.length;
                         for (_i = 0, files_1 = files; _i < files_1.length; _i++) {
                             file = files_1[_i];
                             fileInfo = {
