@@ -38,7 +38,7 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-var node_fetch_1 = __importDefault(require("node-fetch")); // tslint:disable-line:import-name
+var superagent_1 = __importDefault(require("superagent")); // tslint:disable-line:import-name
 var zlib_1 = __importDefault(require("zlib"));
 var default_1 = /** @class */ (function () {
     function default_1(options) {
@@ -55,14 +55,14 @@ var default_1 = /** @class */ (function () {
             var res, acceptRanges, contentLength, eocdData, _a;
             return __generator(this, function (_b) {
                 switch (_b.label) {
-                    case 0: return [4 /*yield*/, node_fetch_1.default(this.url, { method: 'HEAD' })];
+                    case 0: return [4 /*yield*/, superagent_1.default.head(this.url)];
                     case 1:
                         res = _b.sent();
                         if (res.status > 400) {
                             throw new Error("HTTP Error: " + res.status);
                         }
-                        acceptRanges = res.headers.get('accept-ranges');
-                        contentLength = res.headers.get('content-length');
+                        acceptRanges = res.header['accept-ranges'];
+                        contentLength = res.header['content-length'];
                         if (contentLength === null) {
                             throw new Error('Content Length is null');
                         }
@@ -202,14 +202,12 @@ var default_1 = /** @class */ (function () {
             var res;
             return __generator(this, function (_a) {
                 switch (_a.label) {
-                    case 0: return [4 /*yield*/, node_fetch_1.default(this.url, {
-                            headers: {
-                                Range: "bytes=" + start + "-" + end,
-                            },
-                        })];
+                    case 0: return [4 /*yield*/, superagent_1.default.get(this.url)
+                            .responseType('arraybuffer')
+                            .set('Range', "bytes=" + start + "-" + end)];
                     case 1:
                         res = _a.sent();
-                        return [2 /*return*/, res.buffer()];
+                        return [2 /*return*/, Buffer.from(res.body)];
                 }
             });
         });

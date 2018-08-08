@@ -14,9 +14,13 @@
   },
   "devDependencies": {
     "@types/superagent": "^3.8.3",
+    "ts-loader": "^4.4.2",
     "tslint": "^5.11.0",
     "tslint-config-airbnb": "^5.9.2",
-    "typescript": "^2.9.2"
+    "typescript": "^2.9.2",
+    "webpack": "^4.16.5",
+    "webpack-bundle-analyzer": "^2.13.1",
+    "webpack-cli": "^3.1.0"
   },
   "repository": {
     "type": "git",
