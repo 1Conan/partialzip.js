@@ -8,9 +8,11 @@ export default class {
   private url: string;
   private length: number;
   private cdRange: ICDRange;
+  private headers: IHeader;
 
   constructor(options: IOptions) {
     this.url = options.url;
+    this.headers = options.headers === undefined ? {} : options.headers;
     this.length = 0;
     this.fileCount = 0;
     this.cdRange = {
@@ -20,7 +22,7 @@ export default class {
   }
 
   public async init() {
-    const res = await request.head(this.url);
+    const res = await request.head(this.url).set(this.headers);
 
     if (res.status > 400) {
       throw new Error(`HTTP Error: ${res.status}`);
@@ -137,6 +139,7 @@ export default class {
 
   private async partialGet(start: number, end: number): Promise<Buffer> {
     const res = await request.get(this.url)
+      .set(this.headers)
       .responseType('arraybuffer')
       .set('Range', `bytes=${start}-${end}`);
     return Buffer.from(res.body);
@@ -179,6 +182,11 @@ interface IFileData {
 
 interface IOptions {
   url: string;
+  headers?: IHeader;
+}
+
+interface IHeader {
+  [k: string]: string;
 }
 
 interface ICDRange {
