@@ -1,4 +1,4 @@
-import fetch from 'node-fetch'; // tslint:disable-line:import-name
+import request from 'superagent'; // tslint:disable-line:import-name
 import zlib from 'zlib';
 
 export default class {
@@ -20,14 +20,14 @@ export default class {
   }
 
   public async init() {
-    const res = await fetch(this.url, { method: 'HEAD' });
+    const res = await request.head(this.url);
 
     if (res.status > 400) {
       throw new Error(`HTTP Error: ${res.status}`);
     }
 
-    const acceptRanges = res.headers.get('accept-ranges');
-    const contentLength = res.headers.get('content-length');
+    const acceptRanges = res.header['accept-ranges'];
+    const contentLength = res.header['content-length'];
     if (contentLength === null) {
       throw new Error('Content Length is null');
     }
@@ -136,12 +136,10 @@ export default class {
   }
 
   private async partialGet(start: number, end: number): Promise<Buffer> {
-    const res = await fetch(this.url, {
-      headers: {
-        Range: `bytes=${start}-${end}`,
-      },
-    });
-    return res.buffer();
+    const res = await request.get(this.url)
+      .responseType('arraybuffer')
+      .set('Range', `bytes=${start}-${end}`);
+    return Buffer.from(res.body);
   }
 
 }
