@@ -43,10 +43,7 @@
     async function process() {
       const list = document.getElementById('list');
       pz = new PZip({ 
-        url: 'http://cors-anywhere.herokuapp.com/' + document.getElementById('url').value,
-        headers: {
-          Origin: extractHostname(document.getElementById('url').value)
-        }
+        url: 'https://cors-anywhere.herokuapp.com/' + document.getElementById('url').value
       });
 
       console.log('Init', pz.url);
