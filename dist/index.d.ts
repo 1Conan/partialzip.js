@@ -5,6 +5,7 @@ export default class {
     private url;
     private length;
     private cdRange;
+    private headers;
     constructor(options: IOptions);
     init(): Promise<void>;
     list(): string[];
@@ -35,5 +36,9 @@ interface IFileData {
 }
 interface IOptions {
     url: string;
+    headers?: IHeader;
+}
+interface IHeader {
+    [k: string]: string;
 }
 export {};

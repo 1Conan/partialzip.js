@@ -43,6 +43,7 @@ var zlib_1 = __importDefault(require("zlib"));
 var default_1 = /** @class */ (function () {
     function default_1(options) {
         this.url = options.url;
+        this.headers = options.headers === undefined ? {} : options.headers;
         this.length = 0;
         this.fileCount = 0;
         this.cdRange = {
@@ -55,7 +56,7 @@ var default_1 = /** @class */ (function () {
             var res, acceptRanges, contentLength, eocdData, _a;
             return __generator(this, function (_b) {
                 switch (_b.label) {
-                    case 0: return [4 /*yield*/, superagent_1.default.head(this.url)];
+                    case 0: return [4 /*yield*/, superagent_1.default.head(this.url).set(this.headers)];
                     case 1:
                         res = _b.sent();
                         if (res.status > 400) {
@@ -203,6 +204,7 @@ var default_1 = /** @class */ (function () {
             return __generator(this, function (_a) {
                 switch (_a.label) {
                     case 0: return [4 /*yield*/, superagent_1.default.get(this.url)
+                            .set(this.headers)
                             .responseType('arraybuffer')
                             .set('Range', "bytes=" + start + "-" + end)];
                     case 1:
