@@ -3,7 +3,7 @@ import zlib from 'zlib';
 
 export default class {
   public fileCount: number;
-  public files: any;
+  public files: Map<string, IFileData>;
 
   private url: string;
   private length: number;
@@ -19,6 +19,7 @@ export default class {
       end: 0,
       start: 0,
     };
+    this.files = new Map();
   }
 
   public async init() {

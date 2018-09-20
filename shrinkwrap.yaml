@@ -1,0 +1,12 @@
+devDependencies:
+  '@types/node': 10.10.1
+packages:
+  /@types/node/10.10.1:
+    dev: true
+    resolution:
+      integrity: sha512-nzsx28VwfaIykfzMAG9TB3jxF5Nn+1/WMKnmVZc8TsB+LMIVvwUscVn7PAq+LFaY5ng5u4jp5mRROSswo76PPA==
+registry: 'https://registry.npmjs.org/'
+shrinkwrapMinorVersion: 9
+shrinkwrapVersion: 3
+specifiers:
+  '@types/node': ^10.10.1
