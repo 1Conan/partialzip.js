@@ -1,8 +1,7 @@
 dependencies:
-  node-fetch: 2.3.0
+  axios: 0.18.0
 devDependencies:
   '@types/node': 10.12.20
-  '@types/node-fetch': 2.1.5
   ts-loader: 4.5.0
   tslint: 5.12.1
   tslint-config-airbnb: 5.11.1
@@ -36,12 +35,6 @@ packages:
       typescript: '>= 3.0.1 || >= 3.3.0-dev || >= 3.4.0-dev'
     resolution:
       integrity: sha512-xMXM9KTXRLHLVS6dnX1JhHNEkmWHcAVCQ/4+DA1KKwC/AFnGHzu/7QfQttEPgw3xplT+ILf9e3i64jrFwB3JtA==
-  /@types/node-fetch/2.1.5:
-    dependencies:
-      '@types/node': 10.12.20
-    dev: true
-    resolution:
-      integrity: sha512-GuJUcxJt5VjAmkf23v5P2eBX6bVFp3ZVRFhuZhTLxAytlc8puxGDwdZAmQaV8l7A3mpm/xv14UjhSZIWt1UQAQ==
   /@types/node/10.12.20:
     dev: true
     resolution:
@@ -344,6 +337,13 @@ packages:
     hasBin: true
     resolution:
       integrity: sha512-Wm6ukoaOGJi/73p/cl2GvLjTI5JM1k/O14isD73YML8StrH/7/lRFgmg8nICZgD3bZZvjwCGxtMOD3wWNAu8cg==
+  /axios/0.18.0:
+    dependencies:
+      follow-redirects: 1.6.1
+      is-buffer: 1.1.6
+    dev: false
+    resolution:
+      integrity: sha1-MtU+SFHv3AoRmTts0AB4nXDAUQI=
   /babel-code-frame/6.26.0:
     dependencies:
       chalk: 1.1.3
@@ -836,6 +836,12 @@ packages:
     dev: true
     resolution:
       integrity: sha512-bC7ElrdJaJnPbAP+1EotYvqZsb3ecl5wi6Bfi6BJTUcNowp6cvspg0jXznRTKDjm/E7AdgFBVeAPVMNcKGsHMA==
+  /debug/3.1.0:
+    dependencies:
+      ms: 2.0.0
+    dev: false
+    resolution:
+      integrity: sha512-OX8XqP7/1a9cqkxYw2yXss15f26NKWBpDXQd0/uK/KPqdQhxbPa994hnzjcE2VqQpDslf55723cKPUOGSmMY3g==
   /decamelize/1.2.0:
     dev: true
     engines:
@@ -1251,6 +1257,14 @@ packages:
     dev: true
     resolution:
       integrity: sha512-calZMC10u0FMUqoiunI2AiGIIUtUIvifNwkHhNupZH4cbNnW1Itkoh/Nf5HFYmDrwWPjrUxpkZT0KhuCq0jmGw==
+  /follow-redirects/1.6.1:
+    dependencies:
+      debug: 3.1.0
+    dev: false
+    engines:
+      node: '>=4.0'
+    resolution:
+      integrity: sha512-t2JCjbzxQpWvbhts3l6SH1DKzSrx8a+SsaVf4h6bG4kOXUuPYS/kg2Lr4gQSb7eemaHqJkOThF1BGyjlUkO1GQ==
   /for-in/1.0.2:
     dev: true
     engines:
@@ -1588,7 +1602,6 @@ packages:
     resolution:
       integrity: sha1-dfFmQrSA8YenEcgUFh/TpKdlWJg=
   /is-buffer/1.1.6:
-    dev: true
     resolution:
       integrity: sha512-NcdALwpXkTm5Zvvbk7owOUSvVvBKDgKP5/ewfXEznmQFfs4ZRmanOeKBTjRVjka3QFoN6XJ+9F3USqfHqTaU5w==
   /is-data-descriptor/0.1.4:
@@ -2029,7 +2042,6 @@ packages:
     resolution:
       integrity: sha1-viwAX9oy4LKa8fBdfEszIUxwH5I=
   /ms/2.0.0:
-    dev: true
     resolution:
       integrity: sha1-VgiurfwAvmwpAd9fmGF4jeDVl8g=
   /nan/2.12.1:
@@ -2069,12 +2081,6 @@ packages:
     dev: true
     resolution:
       integrity: sha512-1nh45deeb5olNY7eX82BkPO7SSxR5SSYJiPTrTdFUVYwAl8CKMA5N9PjTYkHiRjisVcxcQ1HXdLhx2qxxJzLNQ==
-  /node-fetch/2.3.0:
-    dev: false
-    engines:
-      node: 4.x || >=6.0.0
-    resolution:
-      integrity: sha512-MOd8pV3fxENbryESLgVIeaGKrdl+uaYhCSSVkjeOb/31/njTpcis5aWfdqgNlHIrKOLRbMnfPINPOML2CIFeXA==
   /node-libs-browser/2.2.0:
     dependencies:
       assert: 1.4.1
@@ -3404,8 +3410,7 @@ shrinkwrapMinorVersion: 9
 shrinkwrapVersion: 3
 specifiers:
   '@types/node': ^10.10.1
-  '@types/node-fetch': ^2.1.5
-  node-fetch: ^2.3.0
+  axios: ^0.18.0
   ts-loader: ^4.4.2
   tslint: ^5.12.1
   tslint-config-airbnb: ^5.11.1

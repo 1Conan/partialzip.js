@@ -1,4 +1,4 @@
-import fetch from 'node-fetch'; // tslint:disable-line:import-name
+import axios from 'axios'; // tslint:disable-line:import-name
 import zlib from 'zlib';
 
 export default class {
@@ -23,17 +23,15 @@ export default class {
   }
 
   public async init() {
-    const res = await fetch(this.url, {
+    const res = await axios.head(this.url, {
       headers: this.headers,
-      method: 'HEAD',
     });
 
     if (res.status > 400) {
       throw new Error(`HTTP Error: ${res.status}`);
     }
-
-    const acceptRanges = res.headers.get('accept-ranges');
-    const contentLength = res.headers.get('content-length');
+    const acceptRanges = res.headers['accept-ranges'];
+    const contentLength = res.headers['content-length'];
     if (contentLength === null) {
       throw new Error('Content Length is null');
     }
@@ -142,10 +140,11 @@ export default class {
   }
 
   private async partialGet(start: number, end: number): Promise<Buffer> {
-    const res = await fetch(this.url, {
+    const res = await axios.get(this.url, {
       headers: Object.assign(this.headers, { Range: `bytes=${start}-${end}` }),
+      responseType: 'arraybuffer',
     });
-    return await res.buffer();
+    return Buffer.from(res.data);
   }
 
 }
