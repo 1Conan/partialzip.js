@@ -1,4 +1,4 @@
-import request from 'superagent'; // tslint:disable-line:import-name
+import fetch from 'node-fetch'; // tslint:disable-line:import-name
 import zlib from 'zlib';
 
 export default class {
@@ -23,19 +23,22 @@ export default class {
   }
 
   public async init() {
-    const res = await request.head(this.url).set(this.headers);
+    const res = await fetch(this.url, {
+      headers: this.headers,
+      method: 'HEAD',
+    });
 
     if (res.status > 400) {
       throw new Error(`HTTP Error: ${res.status}`);
     }
 
-    const acceptRanges = res.header['accept-ranges'];
-    const contentLength = res.header['content-length'];
+    const acceptRanges = res.headers.get('accept-ranges');
+    const contentLength = res.headers.get('content-length');
     if (contentLength === null) {
       throw new Error('Content Length is null');
     }
     if (acceptRanges === null || !acceptRanges.match(/byte/i)) {
-      throw new Error(`Server doesn't support partial downloads`);
+      throw new Error('Server doesn\'t support partial downloads');
     }
 
     this.length = parseInt(contentLength, 10);
@@ -50,7 +53,7 @@ export default class {
   }
 
   public async get(obj: IFileData): Promise<Buffer> {
-    if (obj.fileName.endsWith('/')) throw new Error(`Can't fetch base directories!`);
+    if (obj.fileName.endsWith('/')) throw new Error('Can\'t fetch base directories!');
 
     const data = await this.partialGet(obj.offset, obj.offset + 512);
     const signature = data.readUInt32LE(0);
@@ -139,11 +142,10 @@ export default class {
   }
 
   private async partialGet(start: number, end: number): Promise<Buffer> {
-    const res = await request.get(this.url)
-      .set(this.headers)
-      .responseType('arraybuffer')
-      .set('Range', `bytes=${start}-${end}`);
-    return Buffer.from(res.body);
+    const res = await fetch(this.url, {
+      headers: Object.assign(this.headers, { Range: `bytes=${start}-${end}` }),
+    });
+    return await res.buffer();
   }
 
 }
