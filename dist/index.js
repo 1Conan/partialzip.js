@@ -38,7 +38,7 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-var superagent_1 = __importDefault(require("superagent")); // tslint:disable-line:import-name
+var node_fetch_1 = __importDefault(require("node-fetch")); // tslint:disable-line:import-name
 var zlib_1 = __importDefault(require("zlib"));
 var default_1 = /** @class */ (function () {
     function default_1(options) {
@@ -50,25 +50,29 @@ var default_1 = /** @class */ (function () {
             end: 0,
             start: 0,
         };
+        this.files = new Map();
     }
     default_1.prototype.init = function () {
         return __awaiter(this, void 0, void 0, function () {
             var res, acceptRanges, contentLength, eocdData, _a;
             return __generator(this, function (_b) {
                 switch (_b.label) {
-                    case 0: return [4 /*yield*/, superagent_1.default.head(this.url).set(this.headers)];
+                    case 0: return [4 /*yield*/, node_fetch_1.default(this.url, {
+                            headers: this.headers,
+                            method: 'HEAD',
+                        })];
                     case 1:
                         res = _b.sent();
                         if (res.status > 400) {
                             throw new Error("HTTP Error: " + res.status);
                         }
-                        acceptRanges = res.header['accept-ranges'];
-                        contentLength = res.header['content-length'];
+                        acceptRanges = res.headers.get('accept-ranges');
+                        contentLength = res.headers.get('content-length');
                         if (contentLength === null) {
                             throw new Error('Content Length is null');
                         }
                         if (acceptRanges === null || !acceptRanges.match(/byte/i)) {
-                            throw new Error("Server doesn't support partial downloads");
+                            throw new Error('Server doesn\'t support partial downloads');
                         }
                         this.length = parseInt(contentLength, 10);
                         return [4 /*yield*/, this.getEocd()];
@@ -93,7 +97,7 @@ var default_1 = /** @class */ (function () {
                 switch (_a.label) {
                     case 0:
                         if (obj.fileName.endsWith('/'))
-                            throw new Error("Can't fetch base directories!");
+                            throw new Error('Can\'t fetch base directories!');
                         return [4 /*yield*/, this.partialGet(obj.offset, obj.offset + 512)];
                     case 1:
                         data = _a.sent();
@@ -203,13 +207,13 @@ var default_1 = /** @class */ (function () {
             var res;
             return __generator(this, function (_a) {
                 switch (_a.label) {
-                    case 0: return [4 /*yield*/, superagent_1.default.get(this.url)
-                            .set(this.headers)
-                            .responseType('arraybuffer')
-                            .set('Range', "bytes=" + start + "-" + end)];
+                    case 0: return [4 /*yield*/, node_fetch_1.default(this.url, {
+                            headers: Object.assign(this.headers, { Range: "bytes=" + start + "-" + end }),
+                        })];
                     case 1:
                         res = _a.sent();
-                        return [2 /*return*/, Buffer.from(res.body)];
+                        return [4 /*yield*/, res.buffer()];
+                    case 2: return [2 /*return*/, _a.sent()];
                 }
             });
         });

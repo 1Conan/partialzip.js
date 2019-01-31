@@ -1,7 +1,7 @@
 /// <reference types="node" />
 export default class {
     fileCount: number;
-    files: any;
+    files: Map<string, IFileData>;
     private url;
     private length;
     private cdRange;
