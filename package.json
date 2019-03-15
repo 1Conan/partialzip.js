@@ -1,0 +1,40 @@
+{
+  "name": "partialzip",
+  "version": "2.0.0",
+  "description": "",
+  "main": "build/index.js",
+  "bin": "build/bin/partialzip.js",
+  "types": "builld/index.d.ts",
+  "scripts": {
+    "build": "tsc",
+    "doc": "typedoc",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/1Conan/node-partialzip.git"
+  },
+  "keywords": [
+    "partialzip",
+    "zip"
+  ],
+  "author": "1Conan",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/1Conan/node-partialzip/issues"
+  },
+  "homepage": "https://github.com/1Conan/node-partialzip#readme",
+  "devDependencies": {
+    "@types/node": "^11.11.3",
+    "@types/node-fetch": "^2.1.6",
+    "@types/yargs": "^12.0.9",
+    "tslint": "^5.14.0",
+    "tslint-config-airbnb": "^5.11.1",
+    "typedoc": "^0.14.2",
+    "typescript": "^3.3.3333"
+  },
+  "dependencies": {
+    "node-fetch": "^2.3.0",
+    "yargs": "^13.2.2"
+  }
+}
