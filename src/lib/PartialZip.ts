@@ -91,7 +91,7 @@ export class PartialZip {
    */
   private async getCentralDirectory(start: number, end: number) {
     const data = await PartialZip.partialGet(this.url, start, end, this.headers);
-    const files = PartialZip.splitBuffer(data, Buffer.from('\x50\x4b\x01\x02'));
+    const files = this.splitBuffer(data, Buffer.from('\x50\x4b\x01\x02'));
     for (const file of files) {
       try {
         const parsed = PartialZip.parseCentralDirectoryEntry(file);
@@ -228,7 +228,7 @@ export class PartialZip {
     return req.buffer();
   }
 
-  public static splitBuffer(buf: Buffer, buf2: Buffer, index: number = 0) {
+  private splitBuffer(buf: Buffer, buf2: Buffer, index: number = 0) {
     const results: Buffer[] = [];
     for (let i = index; i !== -1;) {
       const start = buf.indexOf(buf2, i);
