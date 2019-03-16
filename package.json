@@ -4,7 +4,7 @@
   "description": "",
   "main": "build/index.js",
   "bin": "build/bin/partialzip.js",
-  "types": "builld/index.d.ts",
+  "types": "build/index.d.ts",
   "scripts": {
     "build": "tsc",
     "doc": "typedoc",
