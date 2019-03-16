@@ -9,7 +9,7 @@
   "scripts": {
     "build": "tsc",
     "doc": "typedoc",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "mocha --require ts-node/register test/**/*.ts"
   },
   "repository": {
     "type": "git",
@@ -26,10 +26,15 @@
   },
   "homepage": "https://github.com/1Conan/node-partialzip#readme",
   "devDependencies": {
+    "@types/chai": "^4.1.7",
+    "@types/mocha": "^5.2.6",
     "@types/node": "^11.11.3",
     "@types/node-fetch": "^2.1.6",
     "@types/yargs": "^12.0.9",
+    "chai": "^4.2.0",
+    "mocha": "^6.0.2",
     "ts-loader": "^5.3.3",
+    "ts-node": "^8.0.3",
     "tslint": "^5.14.0",
     "tslint-config-airbnb": "^5.11.1",
     "typedoc": "^0.14.2",
