@@ -9,6 +9,7 @@
   "scripts": {
     "build": "tsc",
     "doc": "typedoc",
+    "lint": "tslint -p .",
     "test": "mocha --require ts-node/register test/**/*.ts"
   },
   "repository": {
