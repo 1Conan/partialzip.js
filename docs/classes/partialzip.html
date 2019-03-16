@@ -110,6 +110,7 @@
 								<li class="tsd-kind-method tsd-parent-kind-class"><a href="partialzip.html#get" class="tsd-kind-icon">get</a></li>
 								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-private"><a href="partialzip.html#getcentraldirectory" class="tsd-kind-icon">get<wbr>Central<wbr>Directory</a></li>
 								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-private"><a href="partialzip.html#getendofcentraldirectory" class="tsd-kind-icon">get<wbr>End<wbr>OfCentral<wbr>Directory</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-private"><a href="partialzip.html#inflate" class="tsd-kind-icon">inflate</a></li>
 								<li class="tsd-kind-method tsd-parent-kind-class"><a href="partialzip.html#init" class="tsd-kind-icon">init</a></li>
 								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-private"><a href="partialzip.html#splitbuffer" class="tsd-kind-icon">split<wbr>Buffer</a></li>
 								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-static"><a href="partialzip.html#parsecentraldirectoryentry" class="tsd-kind-icon">parse<wbr>Central<wbr>Directory<wbr>Entry</a></li>
@@ -133,7 +134,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/1Conan/node-partialzip/blob/23f2e67/src/lib/PartialZip.ts#L27">lib/PartialZip.ts:27</a></li>
+									<li>Defined in <a href="https://github.com/1Conan/node-partialzip/blob/efcbc10/src/lib/PartialZip.ts#L29">lib/PartialZip.ts:29</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -173,7 +174,7 @@
 					<div class="tsd-signature tsd-kind-icon">files<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">Map</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">, </span><a href="../interfaces/ifileinfo.html" class="tsd-signature-type">IFileInfo</a><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol"> =&nbsp;new Map()</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/1Conan/node-partialzip/blob/23f2e67/src/lib/PartialZip.ts#L27">lib/PartialZip.ts:27</a></li>
+							<li>Defined in <a href="https://github.com/1Conan/node-partialzip/blob/efcbc10/src/lib/PartialZip.ts#L29">lib/PartialZip.ts:29</a></li>
 						</ul>
 					</aside>
 					<div class="tsd-comment tsd-typography">
@@ -195,7 +196,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/1Conan/node-partialzip/blob/23f2e67/src/lib/PartialZip.ts#L71">lib/PartialZip.ts:71</a></li>
+									<li>Defined in <a href="https://github.com/1Conan/node-partialzip/blob/efcbc10/src/lib/PartialZip.ts#L73">lib/PartialZip.ts:73</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -226,7 +227,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/1Conan/node-partialzip/blob/23f2e67/src/lib/PartialZip.ts#L92">lib/PartialZip.ts:92</a></li>
+									<li>Defined in <a href="https://github.com/1Conan/node-partialzip/blob/efcbc10/src/lib/PartialZip.ts#L94">lib/PartialZip.ts:94</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -257,7 +258,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/1Conan/node-partialzip/blob/23f2e67/src/lib/PartialZip.ts#L106">lib/PartialZip.ts:106</a></li>
+									<li>Defined in <a href="https://github.com/1Conan/node-partialzip/blob/efcbc10/src/lib/PartialZip.ts#L108">lib/PartialZip.ts:108</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -266,6 +267,37 @@
 								</div>
 							</div>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><a href="../interfaces/ieocd.html" class="tsd-signature-type">IEoCD</a><span class="tsd-signature-symbol">&gt;</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-private">
+					<a name="inflate" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagPrivate">Private</span> inflate</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-private">
+						<li class="tsd-signature tsd-kind-icon">inflate<span class="tsd-signature-symbol">(</span>buf<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Buffer</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">Buffer</span><span class="tsd-signature-symbol">&gt;</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/1Conan/node-partialzip/blob/efcbc10/src/lib/PartialZip.ts#L248">lib/PartialZip.ts:248</a></li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Promise wrapper for zlib.inflateRaw</p>
+								</div>
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>buf: <span class="tsd-signature-type">Buffer</span></h5>
+									<div class="tsd-comment tsd-typography">
+										<p>Compressed Data</p>
+									</div>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">Buffer</span><span class="tsd-signature-symbol">&gt;</span></h4>
 						</li>
 					</ul>
 				</section>
@@ -279,7 +311,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/1Conan/node-partialzip/blob/23f2e67/src/lib/PartialZip.ts#L42">lib/PartialZip.ts:42</a></li>
+									<li>Defined in <a href="https://github.com/1Conan/node-partialzip/blob/efcbc10/src/lib/PartialZip.ts#L44">lib/PartialZip.ts:44</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -301,7 +333,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/1Conan/node-partialzip/blob/23f2e67/src/lib/PartialZip.ts#L231">lib/PartialZip.ts:231</a></li>
+									<li>Defined in <a href="https://github.com/1Conan/node-partialzip/blob/efcbc10/src/lib/PartialZip.ts#L233">lib/PartialZip.ts:233</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -330,7 +362,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/1Conan/node-partialzip/blob/23f2e67/src/lib/PartialZip.ts#L155">lib/PartialZip.ts:155</a></li>
+									<li>Defined in <a href="https://github.com/1Conan/node-partialzip/blob/efcbc10/src/lib/PartialZip.ts#L157">lib/PartialZip.ts:157</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -361,7 +393,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/1Conan/node-partialzip/blob/23f2e67/src/lib/PartialZip.ts#L195">lib/PartialZip.ts:195</a></li>
+									<li>Defined in <a href="https://github.com/1Conan/node-partialzip/blob/efcbc10/src/lib/PartialZip.ts#L197">lib/PartialZip.ts:197</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -392,7 +424,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/1Conan/node-partialzip/blob/23f2e67/src/lib/PartialZip.ts#L129">lib/PartialZip.ts:129</a></li>
+									<li>Defined in <a href="https://github.com/1Conan/node-partialzip/blob/efcbc10/src/lib/PartialZip.ts#L131">lib/PartialZip.ts:131</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -423,7 +455,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/1Conan/node-partialzip/blob/23f2e67/src/lib/PartialZip.ts#L224">lib/PartialZip.ts:224</a></li>
+									<li>Defined in <a href="https://github.com/1Conan/node-partialzip/blob/efcbc10/src/lib/PartialZip.ts#L226">lib/PartialZip.ts:226</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -494,6 +526,9 @@
 							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-private">
 								<a href="partialzip.html#getendofcentraldirectory" class="tsd-kind-icon">get<wbr>End<wbr>OfCentral<wbr>Directory</a>
 							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-private">
+								<a href="partialzip.html#inflate" class="tsd-kind-icon">inflate</a>
+							</li>
 							<li class=" tsd-kind-method tsd-parent-kind-class">
 								<a href="partialzip.html#init" class="tsd-kind-icon">init</a>
 							</li>
@@ -530,6 +565,9 @@
 					</li>
 					<li class=" tsd-kind-variable tsd-is-not-exported">
 						<a href="../globals.html#args" class="tsd-kind-icon">args</a>
+					</li>
+					<li class=" tsd-kind-variable tsd-is-not-exported">
+						<a href="../globals.html#fetch" class="tsd-kind-icon">fetch</a>
 					</li>
 					<li class=" tsd-kind-variable tsd-is-not-exported">
 						<a href="../globals.html#urlregex" class="tsd-kind-icon">url<wbr>Regex</a>
