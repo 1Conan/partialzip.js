@@ -1,4 +1,4 @@
-# PartialZip
+# PartialZip [![npm version](https://badge.fury.io/js/partialzip.svg)](https://badge.fury.io/js/partialzip)
 
 A zip library that supports partially getting files from ZIP urls.
 
