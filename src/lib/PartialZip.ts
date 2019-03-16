@@ -80,7 +80,7 @@ export class PartialZip {
 
     switch (file.compressionMethod) {
       case 8:
-        return inflateRawSync(fileData);
+        return await this.inflate(fileData);
       default:
         return fileData;
     }
@@ -237,5 +237,18 @@ export class PartialZip {
       i = end;
     }
     return results;
+  }
+
+  /**
+   * Promise wrapper for zlib.inflateRaw
+   * @param buf - Compressed Data
+   */
+  private inflate(buf: Buffer): Promise<Buffer> {
+    return new Promise((resolve, reject) => {
+      inflateRaw(buf, (err, result) => {
+        if (err) return reject(err);
+        resolve(result);
+      });
+    })
   }
 }
