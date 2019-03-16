@@ -1,4 +1,6 @@
-import fetch from 'node-fetch';
+// I used require because that fixes webpack build
+// Yeah, I know it sucks.
+const fetch = require('node-fetch');
 import { inflateRaw } from 'zlib';
 
 import { IHeader } from '../interfaces/Header';
@@ -225,7 +227,7 @@ export class PartialZip {
     const req = await fetch(url, {
       headers: { ...headers, Range: `bytes=${start}-${end}` },
     });
-    return req.buffer();
+    return Buffer.from(await req.arrayBuffer());
   }
 
   private splitBuffer(buf: Buffer, buf2: Buffer, index: number = 0) {
