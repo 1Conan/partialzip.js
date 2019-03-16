@@ -1,5 +1,5 @@
 import fetch from 'node-fetch';
-import { inflateRawSync } from 'zlib';
+import { inflateRaw } from 'zlib';
 
 import { IHeader } from '../interfaces/Header';
 import { IFileInfo } from '../interfaces/FileInfo';
