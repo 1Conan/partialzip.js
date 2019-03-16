@@ -249,6 +249,6 @@ export class PartialZip {
         if (err) return reject(err);
         resolve(result);
       });
-    })
+    });
   }
 }
