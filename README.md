@@ -1,4 +1,4 @@
-# PartialZip [![npm version](https://badge.fury.io/js/partialzip.svg)](https://badge.fury.io/js/partialzip)
+# PartialZip [![npm version](https://badge.fury.io/js/partialzip.svg)](https://badge.fury.io/js/partialzip) [![Build Status](https://travis-ci.org/1Conan/node-partialzip.svg?branch=master)](https://travis-ci.org/1Conan/node-partialzip)
 
 A zip library that supports partially getting files from ZIP urls.
 
