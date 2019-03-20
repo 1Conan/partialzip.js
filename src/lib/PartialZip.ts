@@ -238,7 +238,7 @@ export class PartialZip {
     return Buffer.from(await req.arrayBuffer());
   }
 
-  /**Split buffers by another buffer */
+  /** Split buffers by another buffer */
   private splitBuffer(buf: Buffer, buf2: Buffer, index: number = 0) {
     const results: Buffer[] = [];
     for (let i = index; i !== -1;) {
