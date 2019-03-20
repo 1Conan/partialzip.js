@@ -25,6 +25,7 @@ export class PartialZip {
   /** @hidden */
   private contentLength: number = 0;
 
+  /** Compresson Methods Supported */
   public static compressionMethods = [
     0, // Uncompressed
     8, // Deflate
