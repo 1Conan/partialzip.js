@@ -1,6 +1,6 @@
 {
   "name": "partialzip",
-  "version": "2.1.2",
+  "version": "2.1.3",
   "description": "",
   "main": "build/index.js",
   "bin": "build/bin/partialzip.js",
@@ -14,7 +14,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/1Conan/node-partialzip.git"
+    "url": "git+https://github.com/1Conan/partialzip.js.git"
   },
   "keywords": [
     "partialzip",
@@ -23,9 +23,9 @@
   "author": "1Conan",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/1Conan/node-partialzip/issues"
+    "url": "https://github.com/1Conan/partialzip.js/issues"
   },
-  "homepage": "https://github.com/1Conan/node-partialzip#readme",
+  "homepage": "https://1conan.github.io/partialzip.js/",
   "devDependencies": {
     "@types/chai": "^4.1.7",
     "@types/mocha": "^5.2.6",
