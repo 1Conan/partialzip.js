@@ -7,6 +7,7 @@ import { IHeader } from '../interfaces/Header';
 import { IFileInfo } from '../interfaces/FileInfo';
 import { IEoCD } from '../interfaces/EoCD';
 import { ILocalFileInfo } from '../interfaces/LocalFileInfo';
+import { stringify } from 'querystring';
 
 /**
  * PartialZip Class
@@ -27,8 +28,10 @@ export class PartialZip {
 
   /** Compresson Methods Supported */
   public static compressionMethods = [
-    0, // Uncompressed
-    8, // Deflate
+    /* Uncompressed */
+    0,
+    /* Deflate */
+    8,
   ];
 
   /** List of parsed files from the Zip file */
@@ -44,9 +47,7 @@ export class PartialZip {
     this.headers = opt.headers ? opt.headers : {};
   }
 
-  /**
-   * Fetches all data needed to get the file list
-   */
+  /** Fetches all data needed to get the file list */
   public async init() {
     const req = await fetch(this.url, {
       method: 'HEAD',
@@ -98,6 +99,8 @@ export class PartialZip {
 
   /**
    * Downloads the central directory of the zip
+   * @param start - Start of the central directory
+   * @param end - End of the central directory
    */
   private async getCentralDirectory(start: number, end: number) {
     const data = await PartialZip.partialGet(this.url, start, end, this.headers);
@@ -110,9 +113,7 @@ export class PartialZip {
     }
   }
 
-  /**
-   * Downloads the End of Central Directory
-   */
+  /** Downloads the End of Central Directory */
   private async getEndOfCentralDirectory() {
     /**
      * 22 - EoCD without comment
@@ -134,7 +135,7 @@ export class PartialZip {
 
   /**
    * Parses Local File header
-   * @param buf - Local File Header
+   * @param buf - Raw Local File Header
    */
   public static parseLocalFileHeader(buf: Buffer): ILocalFileInfo {
     if (buf.readUInt32LE(0) !== 0x04034b50) throw new Error('Invalid Local File Header');
@@ -160,7 +161,7 @@ export class PartialZip {
 
   /**
    * Parses an entry in the Central Directory
-   * @param buf - Central Directory Entry
+   * @param buf - Raw CD entry
    */
   public static parseCentralDirectoryEntry(buf: Buffer): IFileInfo {
     if (buf.readUInt32LE(0) !== 0x02014b50) throw new Error('Invalid Central Directory Entry');
@@ -200,7 +201,7 @@ export class PartialZip {
 
   /**
    * Parses the End of Central Directory
-   * @param buf - EOCD Buffer
+   * @param buf - Raw EoCD
    */
   public static parseEndOfCentralDirectory(buf: Buffer): IEoCD {
     let eocdBuffer: Buffer | undefined;
@@ -238,12 +239,17 @@ export class PartialZip {
     return Buffer.from(await req.arrayBuffer());
   }
 
-  /** Split buffers by another buffer */
-  private splitBuffer(buf: Buffer, buf2: Buffer, index: number = 0) {
+  /**
+   * Split buffers by another buffer
+   * @param buf - Buffer to be split
+   * @param separator - The buffer used as a separator
+   * @param index - Where to start spliting in {buf}
+   */
+  private splitBuffer(buf: Buffer, separator: Buffer, index: number = 0) {
     const results: Buffer[] = [];
     for (let i = index; i !== -1;) {
-      const start = buf.indexOf(buf2, i);
-      const end = buf.indexOf(buf2, i + 1);
+      const start = buf.indexOf(separator, i);
+      const end = buf.indexOf(separator, i + 1);
       results.push(buf.slice(start, end));
       i = end;
     }
