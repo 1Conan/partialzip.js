@@ -1,6 +1,8 @@
 #!/usr/bin/env node
 import * as Yargs from 'yargs';
 import fs from 'fs';
+import { basename } from 'path';
+
 import { PartialZip } from '../index';
 
 const urlRegex = /https?:\/\/[-a-zA-Z0-9@:%._\+~#=]{2,256}\.[a-z]{2,6}\/?.*/;
@@ -13,7 +15,7 @@ async function download(argv: any) {
 
   if (file === undefined) throw new Error('File Not Found');
 
-  const output = argv.output ? argv.output : file.fileName.split('/').slice(-1)[0];
+  const output = argv.output ? argv.output : basename(file.fileName);
   const data = await pz.get(file);
   fs.writeFile(`./${output}`, data, (err) => {
     console.log(`Done writing ${output}`);
