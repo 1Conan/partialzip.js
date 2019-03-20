@@ -25,6 +25,11 @@ export class PartialZip {
   /** @hidden */
   private contentLength: number = 0;
 
+  public static compressionMethods = [
+    0, // Uncompressed
+    8, // Deflate
+  ];
+
   /** List of parsed files from the Zip file */
   public files: Map<string, IFileInfo> = new Map();
 
@@ -72,7 +77,9 @@ export class PartialZip {
    */
   public async get(file: IFileInfo) {
     if (file.fileName.endsWith('/')) throw new Error('Cannot download directories');
-    if (![0, 8].includes(file.compressionMethod)) throw new Error('Compression method not support');
+    if (!PartialZip.compressionMethods.includes(file.compressionMethod)) {
+      throw new Error('Compression method not support');
+    }
 
     const localFileHeaderSize = 30 + file.fileNameLength + file.extraFieldLength;
     const data = await PartialZip
