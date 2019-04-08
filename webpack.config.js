@@ -18,6 +18,10 @@ module.exports = {
   },
   resolve: {
     extensions: [ '.tsx', '.ts', '.js' ],
+    alias: {
+      'pako': 'pako/dist/pako_deflate.min.js',
+      'zlib': path.join(__dirname, './src/lib/zlib')
+    }
   },
   output: {
     filename: 'browser.js',
