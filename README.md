@@ -3,7 +3,7 @@
 A zip library that supports partially getting files from ZIP urls.
 
 # Documentation
-Documentation can be accessed [here](https://1conan.github.io/partialzip.jss/)
+Documentation can be accessed [here](https://1conan.github.io/partialzip.js/)
 
 # Quick Start
 ```ts
