@@ -91,11 +91,12 @@
 								<li class="tsd-kind-variable tsd-is-not-exported"><a href="globals.html#urlregex" class="tsd-kind-icon">url<wbr>Regex</a></li>
 							</ul>
 						</section>
-						<section class="tsd-index-section tsd-is-not-exported">
+						<section class="tsd-index-section ">
 							<h3>Functions</h3>
 							<ul class="tsd-index-list">
 								<li class="tsd-kind-function tsd-is-not-exported"><a href="globals.html#bytestosize" class="tsd-kind-icon">bytes<wbr>ToSize</a></li>
 								<li class="tsd-kind-function tsd-is-not-exported"><a href="globals.html#download" class="tsd-kind-icon">download</a></li>
+								<li class="tsd-kind-function"><a href="globals.html#inflateraw" class="tsd-kind-icon">inflate<wbr>Raw</a></li>
 								<li class="tsd-kind-function tsd-is-not-exported"><a href="globals.html#list" class="tsd-kind-icon">list</a></li>
 							</ul>
 						</section>
@@ -110,7 +111,7 @@
 					<div class="tsd-signature tsd-kind-icon">args<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">any</span><span class="tsd-signature-symbol"> =&nbsp;require(&#x27;yargs&#x27;).scriptName(&#x27;partialzip&#x27;).usage(&#x27;$0 &lt;cmd&gt; [args]&#x27;).showHelpOnFail(true).command({command: &#x27;list &lt;url&gt;&#x27;,aliases: [&#x27;ls&#x27;],desc: &#x27;List files in a Zip URL&#x27;,builder: (args: Yargs.Argv) &#x3D;&gt; {args.positional(&#x27;url&#x27;, {type: &#x27;string&#x27;,describe: &#x27;Zip URL&#x27;,});},handler: list,}).command({command: &#x27;download &lt;url&gt; &lt;filename&gt; [output]&#x27;,desc: &#x27;Download file from Zip URL&#x27;,builder: (args: Yargs.Argv) &#x3D;&gt; {args.positional(&#x27;url&#x27;, {type: &#x27;string&#x27;,describe: &#x27;Zip URL&#x27;,});args.positional(&#x27;filename&#x27;, {type: &#x27;string&#x27;,describe: &#x27;Filename of file inside Zip&#x27;,});args.positional(&#x27;output&#x27;, {type: &#x27;string&#x27;,describe: &#x27;Output Location&#x27;,});},handler: download,}).help(&#x27;help&#x27;, &#x27;Show help info.&#x27;).demandCommand().recommendCommands().strict().fail((msg: any, err: Error) &#x3D;&gt; {if (err) return console.log(err.message);Yargs.showHelp();}).argv</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/1Conan/node-partialzip/blob/996c575/src/bin/partialzip.ts#L35">src/bin/partialzip.ts:35</a></li>
+							<li>Defined in <a href="https://github.com/1Conan/node-partialzip/blob/e24be36/src/bin/partialzip.ts#L35">src/bin/partialzip.ts:35</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -120,7 +121,7 @@
 					<div class="tsd-signature tsd-kind-icon">fetch<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">any</span><span class="tsd-signature-symbol"> =&nbsp;require(&#x27;node-fetch&#x27;)</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/1Conan/node-partialzip/blob/996c575/src/lib/PartialZip.ts#L3">src/lib/PartialZip.ts:3</a></li>
+							<li>Defined in <a href="https://github.com/1Conan/node-partialzip/blob/e24be36/src/lib/PartialZip.ts#L3">src/lib/PartialZip.ts:3</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -130,7 +131,7 @@
 					<div class="tsd-signature tsd-kind-icon">ipsw<wbr>Url<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">"http://updates-http.cdn-apple.com/2019WinterFCS/fullrestores/041-39340/31F9E900-292C-11E9-91CE-4611412B0A59/iPhone11,8_12.1.4_16D57_Restore.ipsw"</span><span class="tsd-signature-symbol"> =&nbsp;&quot;http://updates-http.cdn-apple.com/2019WinterFCS/fullrestores/041-39340/31F9E900-292C-11E9-91CE-4611412B0A59/iPhone11,8_12.1.4_16D57_Restore.ipsw&quot;</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/1Conan/node-partialzip/blob/996c575/test/PartialZip.ts#L6">test/PartialZip.ts:6</a></li>
+							<li>Defined in <a href="https://github.com/1Conan/node-partialzip/blob/e24be36/test/PartialZip.ts#L6">test/PartialZip.ts:6</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -140,12 +141,12 @@
 					<div class="tsd-signature tsd-kind-icon">url<wbr>Regex<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">RegExp</span><span class="tsd-signature-symbol"> =&nbsp;/https?:\/\/[-a-zA-Z0-9@:%._\+~#&#x3D;]{2,256}\.[a-z]{2,6}\/?.*/</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/1Conan/node-partialzip/blob/996c575/src/bin/partialzip.ts#L8">src/bin/partialzip.ts:8</a></li>
+							<li>Defined in <a href="https://github.com/1Conan/node-partialzip/blob/e24be36/src/bin/partialzip.ts#L8">src/bin/partialzip.ts:8</a></li>
 						</ul>
 					</aside>
 				</section>
 			</section>
-			<section class="tsd-panel-group tsd-member-group tsd-is-not-exported">
+			<section class="tsd-panel-group tsd-member-group ">
 				<h2>Functions</h2>
 				<section class="tsd-panel tsd-member tsd-kind-function tsd-is-not-exported">
 					<a name="bytestosize" class="tsd-anchor"></a>
@@ -157,7 +158,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/1Conan/node-partialzip/blob/996c575/src/bin/partialzip.ts#L81">src/bin/partialzip.ts:81</a></li>
+									<li>Defined in <a href="https://github.com/1Conan/node-partialzip/blob/e24be36/src/bin/partialzip.ts#L81">src/bin/partialzip.ts:81</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -180,7 +181,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/1Conan/node-partialzip/blob/996c575/src/bin/partialzip.ts#L10">src/bin/partialzip.ts:10</a></li>
+									<li>Defined in <a href="https://github.com/1Conan/node-partialzip/blob/e24be36/src/bin/partialzip.ts#L10">src/bin/partialzip.ts:10</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -190,6 +191,53 @@
 								</li>
 							</ul>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">void</span><span class="tsd-signature-symbol">&gt;</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-function">
+					<a name="inflateraw" class="tsd-anchor"></a>
+					<h3>inflate<wbr>Raw</h3>
+					<ul class="tsd-signatures tsd-kind-function">
+						<li class="tsd-signature tsd-kind-icon">inflate<wbr>Raw<span class="tsd-signature-symbol">(</span>buf<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Buffer</span>, cb<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">function</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/1Conan/node-partialzip/blob/e24be36/src/lib/zlib/index.ts#L3">src/lib/zlib/index.ts:3</a></li>
+								</ul>
+							</aside>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>buf: <span class="tsd-signature-type">Buffer</span></h5>
+								</li>
+								<li>
+									<h5>cb: <span class="tsd-signature-type">function</span></h5>
+									<ul class="tsd-parameters">
+										<li class="tsd-parameter-siganture">
+											<ul class="tsd-signatures tsd-kind-type-literal tsd-is-not-exported">
+												<li class="tsd-signature tsd-kind-icon"><span class="tsd-signature-symbol">(</span>err<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Error</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">null</span>, result<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">Buffer</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+											</ul>
+											<ul class="tsd-descriptions">
+												<li class="tsd-description">
+													<h4 class="tsd-parameters-title">Parameters</h4>
+													<ul class="tsd-parameters">
+														<li>
+															<h5>err: <span class="tsd-signature-type">Error</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">null</span></h5>
+														</li>
+														<li>
+															<h5><span class="tsd-flag ts-flagOptional">Optional</span> result: <span class="tsd-signature-type">Buffer</span></h5>
+														</li>
+													</ul>
+													<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
+												</li>
+											</ul>
+										</li>
+									</ul>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
 						</li>
 					</ul>
 				</section>
@@ -203,7 +251,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/1Conan/node-partialzip/blob/996c575/src/bin/partialzip.ts#L25">src/bin/partialzip.ts:25</a></li>
+									<li>Defined in <a href="https://github.com/1Conan/node-partialzip/blob/e24be36/src/bin/partialzip.ts#L25">src/bin/partialzip.ts:25</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -260,6 +308,9 @@
 					</li>
 					<li class=" tsd-kind-function tsd-is-not-exported">
 						<a href="globals.html#download" class="tsd-kind-icon">download</a>
+					</li>
+					<li class=" tsd-kind-function">
+						<a href="globals.html#inflateraw" class="tsd-kind-icon">inflate<wbr>Raw</a>
 					</li>
 					<li class=" tsd-kind-function tsd-is-not-exported">
 						<a href="globals.html#list" class="tsd-kind-icon">list</a>
