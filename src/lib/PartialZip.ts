@@ -1,6 +1,7 @@
 // I used require because that fixes webpack build
 // Yeah, I know it sucks.
 import Fetch from 'node-fetch';
+/** @hidden */
 const fetch: typeof Fetch = require('node-fetch');
 import { inflateRaw } from 'zlib';
 
