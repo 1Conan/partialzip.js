@@ -4,3 +4,4 @@ tsconfig.json
 tslint.json
 typedoc.json
 .gitignore
+.travis.yml
