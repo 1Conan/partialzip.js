@@ -116,7 +116,10 @@
 								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-private"><a href="partialzip.html#splitbuffer" class="tsd-kind-icon">split<wbr>Buffer</a></li>
 								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-static"><a href="partialzip.html#parsecentraldirectoryentry" class="tsd-kind-icon">parse<wbr>Central<wbr>Directory<wbr>Entry</a></li>
 								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-static"><a href="partialzip.html#parseendofcentraldirectory" class="tsd-kind-icon">parse<wbr>End<wbr>OfCentral<wbr>Directory</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-static"><a href="partialzip.html#parseextrafield" class="tsd-kind-icon">parse<wbr>Extra<wbr>Field</a></li>
 								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-static"><a href="partialzip.html#parselocalfileheader" class="tsd-kind-icon">parse<wbr>Local<wbr>File<wbr>Header</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-static"><a href="partialzip.html#parsezip64endofcentraldirectory" class="tsd-kind-icon">parse<wbr>Zip64<wbr>End<wbr>OfCentral<wbr>Directory</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-static"><a href="partialzip.html#parsezip64endofcentraldirectorylocator" class="tsd-kind-icon">parse<wbr>Zip64<wbr>End<wbr>OfCentral<wbr>Directory<wbr>Locator</a></li>
 								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-static"><a href="partialzip.html#partialget" class="tsd-kind-icon">partial<wbr>Get</a></li>
 							</ul>
 						</section>
@@ -135,7 +138,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/1Conan/node-partialzip/blob/f51172c/src/lib/PartialZip.ts#L40">lib/PartialZip.ts:40</a></li>
+									<li>Defined in <a href="https://github.com/1Conan/partialzip.js/blob/98a9bf9/src/lib/PartialZip.ts#L40">lib/PartialZip.ts:40</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -175,7 +178,7 @@
 					<div class="tsd-signature tsd-kind-icon">files<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">Map</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">, </span><a href="../interfaces/ifileinfo.html" class="tsd-signature-type">IFileInfo</a><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol"> =&nbsp;new Map()</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/1Conan/node-partialzip/blob/f51172c/src/lib/PartialZip.ts#L40">lib/PartialZip.ts:40</a></li>
+							<li>Defined in <a href="https://github.com/1Conan/partialzip.js/blob/98a9bf9/src/lib/PartialZip.ts#L40">lib/PartialZip.ts:40</a></li>
 						</ul>
 					</aside>
 					<div class="tsd-comment tsd-typography">
@@ -190,7 +193,7 @@
 					<div class="tsd-signature tsd-kind-icon">compression<wbr>Methods<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol"> =&nbsp;[/* Uncompressed */0,/* Deflate */8,]</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/1Conan/node-partialzip/blob/f51172c/src/lib/PartialZip.ts#L32">lib/PartialZip.ts:32</a></li>
+							<li>Defined in <a href="https://github.com/1Conan/partialzip.js/blob/98a9bf9/src/lib/PartialZip.ts#L32">lib/PartialZip.ts:32</a></li>
 						</ul>
 					</aside>
 					<div class="tsd-comment tsd-typography">
@@ -212,7 +215,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/1Conan/node-partialzip/blob/f51172c/src/lib/PartialZip.ts#L82">lib/PartialZip.ts:82</a></li>
+									<li>Defined in <a href="https://github.com/1Conan/partialzip.js/blob/98a9bf9/src/lib/PartialZip.ts#L82">lib/PartialZip.ts:82</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -237,13 +240,13 @@
 					<a name="getcentraldirectory" class="tsd-anchor"></a>
 					<h3><span class="tsd-flag ts-flagPrivate">Private</span> get<wbr>Central<wbr>Directory</h3>
 					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-private">
-						<li class="tsd-signature tsd-kind-icon">get<wbr>Central<wbr>Directory<span class="tsd-signature-symbol">(</span>start<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span>, end<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">void</span><span class="tsd-signature-symbol">&gt;</span></li>
+						<li class="tsd-signature tsd-kind-icon">get<wbr>Central<wbr>Directory<span class="tsd-signature-symbol">(</span>start<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">BigInt</span>, end<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">BigInt</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">void</span><span class="tsd-signature-symbol">&gt;</span></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/1Conan/node-partialzip/blob/f51172c/src/lib/PartialZip.ts#L107">lib/PartialZip.ts:107</a></li>
+									<li>Defined in <a href="https://github.com/1Conan/partialzip.js/blob/98a9bf9/src/lib/PartialZip.ts#L121">lib/PartialZip.ts:121</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -254,13 +257,13 @@
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
 								<li>
-									<h5>start: <span class="tsd-signature-type">number</span></h5>
+									<h5>start: <span class="tsd-signature-type">number</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">BigInt</span></h5>
 									<div class="tsd-comment tsd-typography">
 										<p>Start of the central directory</p>
 									</div>
 								</li>
 								<li>
-									<h5>end: <span class="tsd-signature-type">number</span></h5>
+									<h5>end: <span class="tsd-signature-type">number</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">BigInt</span></h5>
 									<div class="tsd-comment tsd-typography">
 										<p>End of the central directory</p>
 									</div>
@@ -280,7 +283,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/1Conan/node-partialzip/blob/f51172c/src/lib/PartialZip.ts#L119">lib/PartialZip.ts:119</a></li>
+									<li>Defined in <a href="https://github.com/1Conan/partialzip.js/blob/98a9bf9/src/lib/PartialZip.ts#L134">lib/PartialZip.ts:134</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -302,7 +305,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/1Conan/node-partialzip/blob/f51172c/src/lib/PartialZip.ts#L265">lib/PartialZip.ts:265</a></li>
+									<li>Defined in <a href="https://github.com/1Conan/partialzip.js/blob/98a9bf9/src/lib/PartialZip.ts#L366">lib/PartialZip.ts:366</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -333,7 +336,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/1Conan/node-partialzip/blob/f51172c/src/lib/PartialZip.ts#L53">lib/PartialZip.ts:53</a></li>
+									<li>Defined in <a href="https://github.com/1Conan/partialzip.js/blob/98a9bf9/src/lib/PartialZip.ts#L53">lib/PartialZip.ts:53</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -355,7 +358,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/1Conan/node-partialzip/blob/f51172c/src/lib/PartialZip.ts#L250">lib/PartialZip.ts:250</a></li>
+									<li>Defined in <a href="https://github.com/1Conan/partialzip.js/blob/98a9bf9/src/lib/PartialZip.ts#L351">lib/PartialZip.ts:351</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -398,7 +401,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/1Conan/node-partialzip/blob/f51172c/src/lib/PartialZip.ts#L168">lib/PartialZip.ts:168</a></li>
+									<li>Defined in <a href="https://github.com/1Conan/partialzip.js/blob/98a9bf9/src/lib/PartialZip.ts#L190">lib/PartialZip.ts:190</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -429,7 +432,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/1Conan/node-partialzip/blob/f51172c/src/lib/PartialZip.ts#L208">lib/PartialZip.ts:208</a></li>
+									<li>Defined in <a href="https://github.com/1Conan/partialzip.js/blob/98a9bf9/src/lib/PartialZip.ts#L231">lib/PartialZip.ts:231</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -451,6 +454,32 @@
 					</ul>
 				</section>
 				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-static">
+					<a name="parseextrafield" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagStatic">Static</span> parse<wbr>Extra<wbr>Field</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-static">
+						<li class="tsd-signature tsd-kind-icon">parse<wbr>Extra<wbr>Field<span class="tsd-signature-symbol">(</span>buf<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Buffer</span>, fileInfo<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/1Conan/partialzip.js/blob/98a9bf9/src/lib/PartialZip.ts#L296">lib/PartialZip.ts:296</a></li>
+								</ul>
+							</aside>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>buf: <span class="tsd-signature-type">Buffer</span></h5>
+								</li>
+								<li>
+									<h5>fileInfo: <span class="tsd-signature-type">any</span></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">any</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-static">
 					<a name="parselocalfileheader" class="tsd-anchor"></a>
 					<h3><span class="tsd-flag ts-flagStatic">Static</span> parse<wbr>Local<wbr>File<wbr>Header</h3>
 					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-static">
@@ -460,7 +489,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/1Conan/node-partialzip/blob/f51172c/src/lib/PartialZip.ts#L142">lib/PartialZip.ts:142</a></li>
+									<li>Defined in <a href="https://github.com/1Conan/partialzip.js/blob/98a9bf9/src/lib/PartialZip.ts#L162">lib/PartialZip.ts:162</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -482,16 +511,108 @@
 					</ul>
 				</section>
 				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-static">
-					<a name="partialget" class="tsd-anchor"></a>
-					<h3><span class="tsd-flag ts-flagStatic">Static</span> partial<wbr>Get</h3>
+					<a name="parsezip64endofcentraldirectory" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagStatic">Static</span> parse<wbr>Zip64<wbr>End<wbr>OfCentral<wbr>Directory</h3>
 					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-static">
-						<li class="tsd-signature tsd-kind-icon">partial<wbr>Get<span class="tsd-signature-symbol">(</span>url<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span>, start<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span>, end<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span>, headers<span class="tsd-signature-symbol">?: </span><a href="../interfaces/iheader.html" class="tsd-signature-type">IHeader</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">Buffer</span><span class="tsd-signature-symbol">&gt;</span></li>
+						<li class="tsd-signature tsd-kind-icon">parse<wbr>Zip64<wbr>End<wbr>OfCentral<wbr>Directory<span class="tsd-signature-symbol">(</span>buf<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Buffer</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">object</span></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/1Conan/node-partialzip/blob/f51172c/src/lib/PartialZip.ts#L237">lib/PartialZip.ts:237</a></li>
+									<li>Defined in <a href="https://github.com/1Conan/partialzip.js/blob/98a9bf9/src/lib/PartialZip.ts#L254">lib/PartialZip.ts:254</a></li>
+								</ul>
+							</aside>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>buf: <span class="tsd-signature-type">Buffer</span></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">object</span></h4>
+							<ul class="tsd-parameters">
+								<li class="tsd-parameter">
+									<h5>cd<wbr>Disk<wbr>Entries<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">bigint</span></h5>
+								</li>
+								<li class="tsd-parameter">
+									<h5>cd<wbr>Entries<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">bigint</span></h5>
+								</li>
+								<li class="tsd-parameter">
+									<h5>cd<wbr>Offset<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">bigint</span></h5>
+								</li>
+								<li class="tsd-parameter">
+									<h5>cd<wbr>Size<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">bigint</span></h5>
+								</li>
+								<li class="tsd-parameter">
+									<h5>cd<wbr>Start<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span></h5>
+								</li>
+								<li class="tsd-parameter">
+									<h5>disk<wbr>Number<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span></h5>
+								</li>
+								<li class="tsd-parameter">
+									<h5>eocd<wbr>Size<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">bigint</span></h5>
+								</li>
+								<li class="tsd-parameter">
+									<h5>signature<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span></h5>
+								</li>
+								<li class="tsd-parameter">
+									<h5>version<wbr>Made<wbr>By<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span></h5>
+								</li>
+								<li class="tsd-parameter">
+									<h5>version<wbr>Needed<wbr>ToExtract<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span></h5>
+								</li>
+							</ul>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-static">
+					<a name="parsezip64endofcentraldirectorylocator" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagStatic">Static</span> parse<wbr>Zip64<wbr>End<wbr>OfCentral<wbr>Directory<wbr>Locator</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-static">
+						<li class="tsd-signature tsd-kind-icon">parse<wbr>Zip64<wbr>End<wbr>OfCentral<wbr>Directory<wbr>Locator<span class="tsd-signature-symbol">(</span>buf<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Buffer</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">object</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/1Conan/partialzip.js/blob/98a9bf9/src/lib/PartialZip.ts#L279">lib/PartialZip.ts:279</a></li>
+								</ul>
+							</aside>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>buf: <span class="tsd-signature-type">Buffer</span></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">object</span></h4>
+							<ul class="tsd-parameters">
+								<li class="tsd-parameter">
+									<h5>disk<wbr>Number<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span></h5>
+								</li>
+								<li class="tsd-parameter">
+									<h5>signature<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span></h5>
+								</li>
+								<li class="tsd-parameter">
+									<h5>total<wbr>Disks<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span></h5>
+								</li>
+								<li class="tsd-parameter">
+									<h5>zip64<wbr>Eocd<wbr>Offset<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">bigint</span></h5>
+								</li>
+							</ul>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-static">
+					<a name="partialget" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagStatic">Static</span> partial<wbr>Get</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-static">
+						<li class="tsd-signature tsd-kind-icon">partial<wbr>Get<span class="tsd-signature-symbol">(</span>url<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span>, start<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">BigInt</span>, end<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">BigInt</span>, headers<span class="tsd-signature-symbol">?: </span><a href="../interfaces/iheader.html" class="tsd-signature-type">IHeader</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">Buffer</span><span class="tsd-signature-symbol">&gt;</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/1Conan/partialzip.js/blob/98a9bf9/src/lib/PartialZip.ts#L337">lib/PartialZip.ts:337</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -508,13 +629,13 @@
 									</div>
 								</li>
 								<li>
-									<h5>start: <span class="tsd-signature-type">number</span></h5>
+									<h5>start: <span class="tsd-signature-type">number</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">BigInt</span></h5>
 									<div class="tsd-comment tsd-typography">
 										<p>Byte where the download starts.</p>
 									</div>
 								</li>
 								<li>
-									<h5>end: <span class="tsd-signature-type">number</span></h5>
+									<h5>end: <span class="tsd-signature-type">number</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">BigInt</span></h5>
 									<div class="tsd-comment tsd-typography">
 										<p>Byte where the download ends.</p>
 									</div>
@@ -581,7 +702,16 @@
 								<a href="partialzip.html#parseendofcentraldirectory" class="tsd-kind-icon">parse<wbr>End<wbr>OfCentral<wbr>Directory</a>
 							</li>
 							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-static">
+								<a href="partialzip.html#parseextrafield" class="tsd-kind-icon">parse<wbr>Extra<wbr>Field</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-static">
 								<a href="partialzip.html#parselocalfileheader" class="tsd-kind-icon">parse<wbr>Local<wbr>File<wbr>Header</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-static">
+								<a href="partialzip.html#parsezip64endofcentraldirectory" class="tsd-kind-icon">parse<wbr>Zip64<wbr>End<wbr>OfCentral<wbr>Directory</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-static">
+								<a href="partialzip.html#parsezip64endofcentraldirectorylocator" class="tsd-kind-icon">parse<wbr>Zip64<wbr>End<wbr>OfCentral<wbr>Directory<wbr>Locator</a>
 							</li>
 							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-static">
 								<a href="partialzip.html#partialget" class="tsd-kind-icon">partial<wbr>Get</a>
