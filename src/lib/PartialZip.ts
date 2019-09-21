@@ -11,6 +11,29 @@ import { IEoCD } from '../interfaces/EoCD';
 import { ILocalFileInfo } from '../interfaces/LocalFileInfo';
 import { stringify } from 'querystring';
 
+// Shim for nodejs 10/11
+// from https://github.com/nodejs/node/blob/master/lib/internal/buffer.js
+if (!Buffer.prototype.readBigUInt64LE)  {
+  // tslint:disable: no-increment-decrement no-parameter-reassignment
+  Buffer.prototype.readBigUInt64LE = function readBigUInt64LE(offset = 0) {
+    const first = this[offset];
+    const last = this[offset + 7];
+    if (first === undefined || last === undefined) {
+      throw new Error('Out of bounds');
+    }
+    const lo = first +
+      this[++offset] * 2 ** 8 +
+      this[++offset] * 2 ** 16 +
+      this[++offset] * 2 ** 24;
+    const hi = this[++offset] +
+      this[++offset] * 2 ** 8 +
+      this[++offset] * 2 ** 16 +
+      last * 2 ** 24;
+    return BigInt(lo) + (BigInt(hi) << 32n);
+  };
+  // tslint:enable: no-increment-decrement no-parameter-reassignment
+}
+
 /**
  * PartialZip Class
  * @example
@@ -264,15 +287,15 @@ export class PartialZip {
 
     return {
       signature: eocdBuffer.readUInt32LE(0), // 4
-      eocdSize: eocdBuffer.readBigInt64LE(4), // 8
+      eocdSize: eocdBuffer.readBigUInt64LE(4), // 8
       versionMadeBy: eocdBuffer.readUInt16LE(12), // 2
       versionNeededToExtract: eocdBuffer.readUInt16LE(14), // 2
       diskNumber: eocdBuffer.readUInt32LE(16), // 4
       cdStart: eocdBuffer.readUInt32LE(20), // 4
-      cdDiskEntries: eocdBuffer.readBigInt64LE(24), // 8
-      cdEntries: eocdBuffer.readBigInt64LE(32), // 8
-      cdSize: eocdBuffer.readBigInt64LE(40), // 8
-      cdOffset: eocdBuffer.readBigInt64LE(48), // 8
+      cdDiskEntries: eocdBuffer.readBigUInt64LE(24), // 8
+      cdEntries: eocdBuffer.readBigUInt64LE(32), // 8
+      cdSize: eocdBuffer.readBigUInt64LE(40), // 8
+      cdOffset: eocdBuffer.readBigUInt64LE(48), // 8
     };
   }
 
@@ -288,7 +311,7 @@ export class PartialZip {
     return {
       signature: eocdLocatorBuffer.readUInt32LE(0),
       diskNumber: eocdLocatorBuffer.readUInt32LE(4),
-      zip64EocdOffset: eocdLocatorBuffer.readBigInt64LE(8),
+      zip64EocdOffset: eocdLocatorBuffer.readBigUInt64LE(8),
       totalDisks: eocdLocatorBuffer.readUInt32LE(12),
     };
   }
