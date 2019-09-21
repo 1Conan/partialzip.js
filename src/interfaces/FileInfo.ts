@@ -68,7 +68,13 @@ export interface IFileInfo {
   fileName: string;
 
   /** Extra Field */
-  extraField: Buffer;
+  extraField: {
+    Zip64?: {
+      uncompressedSize?: BigInt;
+      compressedSize?: BigInt;
+      offset?: BigInt;
+    };
+  };
 
   /** File comment */
   fileComment: string;

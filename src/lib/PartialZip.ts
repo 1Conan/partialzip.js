@@ -72,7 +72,7 @@ export class PartialZip {
     this.contentLength = parseInt(contentLength, 10);
 
     const eocd = await this.getEndOfCentralDirectory();
-    await this.getCentralDirectory(eocd.cdOffset, eocd.cdOffset + eocd.cdSize);
+    await this.getCentralDirectory(eocd.cdOffset, BigInt(eocd.cdOffset) + BigInt(eocd.cdSize));
   }
 
   /**
@@ -86,10 +86,24 @@ export class PartialZip {
     }
 
     const localFileHeaderSize = 30 + file.fileNameLength + file.extraFieldLength;
-    const data = await PartialZip
-      .partialGet(this.url, file.offset, file.offset + file.compressedSize + localFileHeaderSize);
 
-    const fileData = data.slice(localFileHeaderSize);
+    let offset: number | BigInt = file.offset;
+    let compressedSize: number | BigInt = file.compressedSize;
+
+    if (offset === 0xffffffff && file.extraField.Zip64 && file.extraField.Zip64.offset) {
+      offset = file.extraField.Zip64.offset;
+    }
+    if (compressedSize === 0xffffffff
+      && file.extraField.Zip64 && file.extraField.Zip64.compressedSize) {
+      compressedSize = file.extraField.Zip64.compressedSize;
+    }
+    const data = await PartialZip.partialGet(
+      this.url,
+      offset, BigInt(offset) + BigInt(compressedSize) + BigInt(localFileHeaderSize));
+
+    const localFileHeader = PartialZip.parseLocalFileHeader(data.slice(0, localFileHeaderSize));
+    const fileData = data
+      .slice(30 + localFileHeader.extraFieldLength + localFileHeader.fileNameLength);
 
     switch (file.compressionMethod) {
       case 8:
@@ -104,8 +118,9 @@ export class PartialZip {
    * @param start - Start of the central directory
    * @param end - End of the central directory
    */
-  private async getCentralDirectory(start: number, end: number) {
-    const data = await PartialZip.partialGet(this.url, start, end, this.headers);
+  private async getCentralDirectory(start: number | BigInt, end: number | BigInt) {
+    const data = await PartialZip.partialGet(
+      this.url, start, end, this.headers);
     const files = this.splitBuffer(data, Buffer.from('\x50\x4b\x01\x02'));
     for (const file of files) {
       try {
@@ -121,7 +136,7 @@ export class PartialZip {
      * 22 - EoCD without comment
      * 0xffff - Max EoCD comment size
      */
-    const bufferSize = Math.min(22 + 0xffff, this.contentLength);
+    const bufferSize = Math.min(22 + 0xffff + 0xffff, this.contentLength);
     const bufferReadStart =  this.contentLength - bufferSize;
 
     const eocdTempBuffer = await PartialZip.partialGet(
@@ -131,6 +146,11 @@ export class PartialZip {
       this.headers);
 
     const parsedEocd = PartialZip.parseEndOfCentralDirectory(eocdTempBuffer);
+
+    if (parsedEocd.cdOffset === 0xffffffff) {
+      const zip64Eocd = PartialZip.parseZip64EndOfCentralDirectory(eocdTempBuffer);
+      parsedEocd.cdOffset = zip64Eocd.cdOffset;
+    }
 
     return parsedEocd;
   }
@@ -157,7 +177,9 @@ export class PartialZip {
     return {
       ...fileHeader,
       fileName: buf.slice(30, 30 + fileHeader.fileNameLength).toString(),
-      extraField: buf.slice(30 + fileHeader.fileNameLength),
+      extraField: buf.slice(
+        30 + fileHeader.fileNameLength,
+        30 + fileHeader.fileNameLength + fileHeader.extraFieldLength),
     };
   }
 
@@ -188,8 +210,9 @@ export class PartialZip {
       offset: buf.readUInt32LE(42),
     };
     const fileData = buf.slice(46);
-    const extraField = fileData
-      .slice(fileInfo.fileNameLength, fileInfo.fileNameLength + fileInfo.extraFieldLength);
+    const extraField = PartialZip.parseExtraField(
+      fileData.slice(fileInfo.fileNameLength, fileInfo.fileNameLength + fileInfo.extraFieldLength),
+      fileInfo);
     const fileComment = buf
       .slice(extraField.length, extraField.length + fileInfo.fileCommentLength).toString();
 
@@ -211,6 +234,7 @@ export class PartialZip {
     for (let i = buf.length - 22; i >= 0; i -= 1) {
       if (buf.readUInt32LE(i) !== 0x06054b50) continue;
       eocdBuffer = buf.slice(i);
+      break;
     }
 
     if (eocdBuffer === undefined) throw new Error('Cannot find end of central directory');
@@ -227,6 +251,82 @@ export class PartialZip {
     };
   }
 
+  public static parseZip64EndOfCentralDirectory(buf: Buffer) {
+    let eocdBuffer: Buffer | undefined;
+
+    for (let i = buf.length - 22; i >= 0; i -= 1) {
+      if (buf.readUInt32LE(i) !== 0x6064b50) continue;
+      eocdBuffer = buf.slice(i);
+      break;
+    }
+
+    if (eocdBuffer === undefined) throw new Error('Cannot find Zip64 end of central directory');
+
+    return {
+      signature: eocdBuffer.readUInt32LE(0), // 4
+      eocdSize: eocdBuffer.readBigInt64LE(4), // 8
+      versionMadeBy: eocdBuffer.readUInt16LE(12), // 2
+      versionNeededToExtract: eocdBuffer.readUInt16LE(14), // 2
+      diskNumber: eocdBuffer.readUInt32LE(16), // 4
+      cdStart: eocdBuffer.readUInt32LE(20), // 4
+      cdDiskEntries: eocdBuffer.readBigInt64LE(24), // 8
+      cdEntries: eocdBuffer.readBigInt64LE(32), // 8
+      cdSize: eocdBuffer.readBigInt64LE(40), // 8
+      cdOffset: eocdBuffer.readBigInt64LE(48), // 8
+    };
+  }
+
+  public static parseZip64EndOfCentralDirectoryLocator(buf: Buffer) {
+    let eocdLocatorBuffer: Buffer | undefined;
+
+    for (let i = buf.length - 22; i >= 0; i -= 1) {
+      if (buf.readUInt32LE(i) !== 0x7064b50) continue;
+      eocdLocatorBuffer = buf.slice(i);
+    }
+
+    if (eocdLocatorBuffer === undefined) throw new Error('Cannot find Zip64 end of central directory locator');
+    return {
+      signature: eocdLocatorBuffer.readUInt32LE(0),
+      diskNumber: eocdLocatorBuffer.readUInt32LE(4),
+      zip64EocdOffset: eocdLocatorBuffer.readBigInt64LE(8),
+      totalDisks: eocdLocatorBuffer.readUInt32LE(12),
+    };
+  }
+
+  public static parseExtraField(buf: Buffer, fileInfo: any) {
+    const fields: any = {};
+    for (let i = 0; i < buf.length; i += 1) {
+      let offset = i;
+      const header = buf.readUInt16LE(offset);
+      offset += 2;
+      const size = buf.readUInt16LE(offset);
+      offset += 2;
+
+      let length = size;
+      if (header === 0x0001) {
+        const zip64Fields: any = {};
+        if (length >= 8 && fileInfo.uncompressedSize === 0xffffffff) {
+          zip64Fields.uncompressedSize = buf.readBigUInt64LE(offset);
+          offset += 8;
+          length -= 8;
+        }
+        if (length >= 8 && fileInfo.compressedSize === 0xffffffff) {
+          zip64Fields.compressedSize = buf.readBigUInt64LE(offset);
+          offset += 8;
+          length -= 8;
+        }
+        if (length >= 8 && fileInfo.offset === 0xffffffff) {
+          zip64Fields.offset = buf.readBigUInt64LE(offset);
+          offset += 8;
+          length -= 8;
+        }
+        fields.Zip64 = zip64Fields;
+      }
+      i = offset;
+    }
+    return fields;
+  }
+
   /**
    * Partially downloads files
    * @param url - File URL
@@ -234,7 +334,8 @@ export class PartialZip {
    * @param end - Byte where the download ends.
    * @param headers - Request Headers
    */
-  public static async partialGet(url: string, start: number, end: number, headers: IHeader = {}) {
+  public static async partialGet(
+      url: string, start: number | BigInt, end: number | BigInt, headers: IHeader = {}) {
     const req = await fetch(url, {
       headers: { ...headers, Range: `bytes=${start}-${end}` },
     });

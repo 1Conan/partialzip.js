@@ -24,10 +24,10 @@ export interface IEoCD {
   cdEntries: number;
 
   /** Size of central directory */
-  cdSize: number;
+  cdSize: number | BigInt;
 
   /** Offset of start of central directory, relative to the start of the archive */
-  cdOffset: number;
+  cdOffset: number | BigInt;
 
   /** Comment length (n) */
   commentLength: number;
