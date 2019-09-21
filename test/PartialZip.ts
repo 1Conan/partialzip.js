@@ -34,7 +34,7 @@ describe('PartialZip', function () {
     const fileData = await pz.get(file);
 
     // Expect file length
-    //expect(fileData.length).to.equal(201721);
+    // expect(fileData.length).to.equal(201721);
 
     const startBytes = Buffer.from([0x3c, 0x3f, 0x78, 0x6d, 0x6c]);
     const endBytes = Buffer.from([0x69, 0x73, 0x74, 0x3e, 0x0a]);
