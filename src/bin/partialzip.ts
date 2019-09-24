@@ -28,7 +28,17 @@ async function list(argv: any) {
   await pz.init();
   for (const [fileName, fileInfo] of pz.files) {
     if (fileName.endsWith('/')) continue;
-    console.log('%s\t%s', bytesToSize(fileInfo.uncompressedSize), fileName);
+    const { extraField, uncompressedSize } = fileInfo;
+    let size: BigInt = BigInt(fileInfo.uncompressedSize);
+    if (extraField.Zip64 && extraField.Zip64.uncompressedSize) {
+      size = extraField.Zip64.uncompressedSize;
+    }
+    console.log(
+      '%s\t%s',
+      bytesToSize(
+        extraField.Zip64 ? extraField.Zip64.uncompressedSize! : uncompressedSize,
+      ),
+      fileName);
   }
 }
 
@@ -78,9 +88,14 @@ const args = require('yargs')
   .argv;
 
 // Modified from https://stackoverflow.com/a/18650828/11131612
-function bytesToSize(bytes: number) {
-  const sizes = ['B', 'KB', 'MB', 'GB', 'TB'];
-  if (bytes === 0) return '0 B';
-  const i = Math.floor(Math.log(bytes) / Math.log(1000));
-  return `${Math.round(bytes / Math.pow(1000, i))} ${sizes[i]}`;
+function bytesToSize(bytes: number | BigInt): string {
+  const input = BigInt(bytes);
+  const sizes = ['B', 'KB', 'MB', 'GB', 'TB', 'PB', 'EB'];
+  // tslint:disable-next-line:triple-equals
+  if (input === 0n) return '0 B';
+  // TODO: Add math floor and logarithm
+  // Math.floor seems to be done by default in BigInt divsion
+  // So I only need to logarithm
+  const i = Math.floor((Math.log(Number(bytes)) / Math.log(1000)));
+  return `${input / BigInt(1000 ** i)} ${sizes[i]}`;
 }

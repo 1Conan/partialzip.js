@@ -1,6 +1,6 @@
 {
   "name": "partialzip",
-  "version": "2.3.3",
+  "version": "2.3.4",
   "description": "",
   "main": "build/index.js",
   "bin": "build/bin/partialzip.js",
