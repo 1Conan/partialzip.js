@@ -1,8 +1,8 @@
 // I used require because that fixes webpack build
 // Yeah, I know it sucks.
-import Fetch from 'node-fetch';
+import Fetch from 'cross-fetch';
 /** @hidden */
-const fetch: typeof Fetch = require('node-fetch');
+const fetch: typeof Fetch = require('cross-fetch');
 import { inflateRaw } from 'zlib';
 
 import { IHeader } from '../interfaces/Header';
