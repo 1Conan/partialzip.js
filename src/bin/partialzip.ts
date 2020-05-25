@@ -1,7 +1,7 @@
 #!/usr/bin/env node
 import * as Yargs from 'yargs';
 import fs from 'fs';
-import { basename } from 'path';
+import { basename, resolve } from 'path';
 
 import { PartialZip } from '../index';
 
@@ -17,7 +17,7 @@ async function download(argv: any) {
 
   const output = argv.output ? argv.output : basename(file.fileName);
   const data = await pz.get(file);
-  fs.writeFile(`./${output}`, data, (err) => {
+  fs.writeFile(resolve(output), data, (err) => {
     console.log(`Done writing ${output}`);
   });
 }
