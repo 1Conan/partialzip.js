@@ -1,52 +1,52 @@
 {
-  "name": "partialzip",
-  "version": "2.4.0",
-  "description": "",
-  "main": "build/index.js",
-  "bin": "build/bin/partialzip.js",
-  "browser": "build/browser.js",
-  "types": "build/index.d.ts",
-  "scripts": {
-    "build": "tsc",
-    "doc": "typedoc",
-    "lint": "tslint -p .",
-    "test": "mocha --require ts-node/register test/**/*.ts"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/1Conan/partialzip.js.git"
-  },
-  "keywords": [
-    "partialzip",
-    "zip"
-  ],
-  "author": "1Conan",
-  "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/1Conan/partialzip.js/issues"
-  },
-  "homepage": "https://1conan.github.io/partialzip.js/",
-  "devDependencies": {
-    "@types/chai": "^4.2.11",
-    "@types/mocha": "^5.2.7",
-    "@types/node": "^12.12.42",
-    "@types/pako": "^1.0.1",
-    "@types/yargs": "^12.0.17",
-    "chai": "^4.2.0",
-    "mocha": "^6.2.3",
-    "ts-loader": "^5.4.5",
-    "ts-node": "^8.10.1",
-    "tslint": "^5.20.1",
-    "tslint-config-airbnb": "^5.11.2",
-    "typedoc": "^0.14.2",
-    "typescript": "^3.9.3",
-    "uglifyjs-webpack-plugin": "^2.2.0",
-    "webpack": "^4.43.0",
-    "webpack-bundle-analyzer": "^3.8.0"
-  },
-  "dependencies": {
-    "cross-fetch": "^3.0.4",
-    "pako": "^1.0.11",
-    "yargs": "^13.3.2"
-  }
+	"name": "partialzip",
+	"version": "2.4.1",
+	"description": "",
+	"main": "build/index.js",
+	"bin": "build/bin/partialzip.js",
+	"browser": "build/browser.js",
+	"types": "build/index.d.ts",
+	"scripts": {
+		"build": "tsc",
+		"doc": "typedoc",
+		"lint": "tslint -p .",
+		"test": "mocha --require ts-node/register test/**/*.ts"
+	},
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/1Conan/partialzip.js.git"
+	},
+	"keywords": [
+		"partialzip",
+		"zip"
+	],
+	"author": "1Conan",
+	"license": "MIT",
+	"bugs": {
+		"url": "https://github.com/1Conan/partialzip.js/issues"
+	},
+	"homepage": "https://1conan.github.io/partialzip.js/",
+	"devDependencies": {
+		"@types/chai": "^4.2.11",
+		"@types/mocha": "^5.2.7",
+		"@types/node": "^12.12.42",
+		"@types/pako": "^1.0.1",
+		"@types/yargs": "^12.0.17",
+		"chai": "^4.2.0",
+		"mocha": "^6.2.3",
+		"ts-loader": "^5.4.5",
+		"ts-node": "^8.10.1",
+		"tslint": "^5.20.1",
+		"tslint-config-airbnb": "^5.11.2",
+		"typedoc": "^0.14.2",
+		"typescript": "^3.9.3",
+		"uglifyjs-webpack-plugin": "^2.2.0",
+		"webpack": "^4.43.0",
+		"webpack-bundle-analyzer": "^3.8.0"
+	},
+	"dependencies": {
+		"cross-fetch": "^3.0.4",
+		"pako": "^1.0.11",
+		"yargs": "^13.3.2"
+	}
 }
