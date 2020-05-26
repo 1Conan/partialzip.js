@@ -1,5 +1,5 @@
 #!/usr/bin/env node
-import * as Yargs from 'yargs';
+import Yargs from 'yargs';
 import fs from 'fs';
 import { basename, resolve } from 'path';
 
