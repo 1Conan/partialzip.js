@@ -318,7 +318,7 @@ export class PartialZip {
 
   public static parseExtraField(buf: Buffer, fileInfo: any) {
     const fields: any = {};
-    for (let i = 0; i < buf.length; i += 1) {
+    for (let i = 0; i < buf.length && buf.length - i > 4; i += 1) {
       let offset = i;
       const header = buf.readUInt16LE(offset);
       offset += 2;
