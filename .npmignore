@@ -1,8 +1,8 @@
 docs/
 src/
+.gitignore
+.eslintrc.js
+.prettierrc.js
 tsconfig.json
-tslint.json
 typedoc.json
 webpack.config.js
-.gitignore
-.travis.yml

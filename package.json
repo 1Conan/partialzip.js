@@ -8,9 +8,9 @@
   "types": "build/index.d.ts",
   "scripts": {
     "build": "tsc",
-    "doc": "typedoc",
-    "lint": "tslint -p .",
-    "test": "mocha --require ts-node/register test/**/*.ts"
+    "lint": "eslint --ext .js,.ts src",
+    "lint:fix": "eslint --fix --ext .js,.ts src",
+    "test": "ava --timeout=2m"
   },
   "repository": {
     "type": "git",
@@ -27,17 +27,14 @@
   },
   "homepage": "https://1conan.github.io/partialzip.js/",
   "devDependencies": {
-    "@types/chai": "^4.2.11",
-    "@types/mocha": "^5.2.7",
+    "@tsssaver/eslint-config": "github:TSSSaver/eslint-config",
     "@types/node": "^12.12.42",
     "@types/pako": "^1.0.1",
     "@types/yargs": "^12.0.17",
-    "chai": "^4.2.0",
-    "mocha": "^6.2.3",
+    "ava": "^3.8.2",
+    "prettier": "^2.0.5",
     "ts-loader": "^5.4.5",
-    "ts-node": "^8.10.1",
-    "tslint": "^5.20.1",
-    "tslint-config-airbnb": "^5.11.2",
+    "ts-node": "^8.10.2",
     "typedoc": "^0.14.2",
     "typescript": "^3.9.3",
     "uglifyjs-webpack-plugin": "^2.2.0",
@@ -46,7 +43,20 @@
   },
   "dependencies": {
     "cross-fetch": "^3.0.4",
+    "eslint": "^7.1.0",
     "pako": "^1.0.11",
     "yargs": "^13.3.2"
+  },
+  "ava": {
+    "files": [
+      "test/**/*.ts",
+      "!test/lib"
+    ],
+    "extensions": [
+      "ts"
+    ],
+    "require": [
+      "ts-node/register"
+    ]
   }
 }
