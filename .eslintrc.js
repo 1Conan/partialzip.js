@@ -7,5 +7,6 @@ module.exports = {
   ],
   rules: {
     'tsdoc/syntax': 'warn',
+    'no-bitwise': 'off',
   },
 };
