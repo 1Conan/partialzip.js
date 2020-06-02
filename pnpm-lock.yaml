@@ -9,6 +9,7 @@ devDependencies:
   '@types/pako': 1.0.1
   '@types/yargs': 15.0.5
   ava: 3.8.2
+  eslint-plugin-import: 2.20.2_eslint@7.1.0
   eslint-plugin-tsdoc: 0.2.5
   prettier: 2.0.5
   ts-loader: 7.0.5_typescript@3.9.3
@@ -5676,6 +5677,7 @@ packages:
       prettier: ^2.0.5
       typescript: ^3.9.3
     resolution:
+      registry: 'https://registry.npmjs.org/'
       tarball: 'https://codeload.github.com/TSSSaver/eslint-config/tar.gz/006f5e1ab74b701265e36035eaf0ce5f3e7ea33a'
     version: 1.1.0
 specifiers:
@@ -5686,6 +5688,7 @@ specifiers:
   ava: ^3.8.2
   cross-fetch: ^3.0.4
   eslint: ^7.1.0
+  eslint-plugin-import: ^2.20.2
   eslint-plugin-tsdoc: ^0.2.5
   pako: ^1.0.11
   prettier: ^2.0.5
