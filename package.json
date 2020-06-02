@@ -28,7 +28,7 @@
   "homepage": "https://1conan.github.io/partialzip.js/",
   "devDependencies": {
     "@tsssaver/eslint-config": "github:TSSSaver/eslint-config",
-    "@types/node": "^12.12.42",
+    "@types/node": "^12.12.43",
     "@types/pako": "^1.0.1",
     "@types/yargs": "^15.0.5",
     "ava": "^3.8.2",
