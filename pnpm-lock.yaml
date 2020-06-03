@@ -4,7 +4,7 @@ dependencies:
   pako: 1.0.11
   yargs: 15.3.1
 devDependencies:
-  '@tsssaver/eslint-config': github.com/TSSSaver/eslint-config/006f5e1ab74b701265e36035eaf0ce5f3e7ea33a_52f41502df366788960944537e74575d
+  '@tsssaver/eslint-config': github.com/TSSSaver/eslint-config/b1e04f5eca9e39344ed327949359414cc32b4990_52f41502df366788960944537e74575d
   '@types/node': 12.12.43
   '@types/pako': 1.0.1
   '@types/yargs': 15.0.5
@@ -1428,7 +1428,7 @@ packages:
       create-hmac: 1.1.7
       diffie-hellman: 5.0.3
       inherits: 2.0.4
-      pbkdf2: 3.0.17
+      pbkdf2: 3.1.0
       public-encrypt: 4.0.3
       randombytes: 2.1.0
       randomfill: 1.0.4
@@ -2134,7 +2134,7 @@ packages:
       '@nodelib/fs.stat': 2.0.3
       '@nodelib/fs.walk': 1.2.4
       glob-parent: 5.1.1
-      merge2: 1.3.0
+      merge2: 1.4.1
       micromatch: 4.0.2
       picomatch: 2.2.2
     dev: true
@@ -2433,7 +2433,7 @@ packages:
       fast-glob: 3.2.2
       glob: 7.1.6
       ignore: 5.1.8
-      merge2: 1.3.0
+      merge2: 1.4.1
       slash: 3.0.0
     dev: true
     engines:
@@ -2446,7 +2446,7 @@ packages:
       dir-glob: 3.0.1
       fast-glob: 3.2.2
       ignore: 5.1.8
-      merge2: 1.3.0
+      merge2: 1.4.1
       slash: 3.0.0
     dev: true
     engines:
@@ -2753,12 +2753,12 @@ packages:
       node: '>=6.0.0'
     resolution:
       integrity: sha512-5fJMWEmikSYu0nv/flMc475MhGbB7TSPd/2IpFV4I4rMklboCH2rQjYY5kKiYGHqUF9gvaambupcJFFG9dvReg==
-  /interpret/1.3.0:
+  /interpret/1.4.0:
     dev: true
     engines:
       node: '>= 0.10'
     resolution:
-      integrity: sha512-RDVhhDkycLoSQtE9o0vpK/vOccVDsCbWVzRxArGYnlQLcihPl2loFbPyiH7CM0m2/ijOJU3+PZbnBPaB6NJ1MA==
+      integrity: sha512-agE4QfB2Lkp9uICn7BAqoscw4SZP9kTE2hxiFI3jBPmXJfdqiahTbUuKGsMoN2GtqL9AxhYioAcVvgsb1HvRbA==
   /ipaddr.js/1.9.1:
     dev: true
     engines:
@@ -3393,12 +3393,12 @@ packages:
     dev: true
     resolution:
       integrity: sha1-sAqqVW3YtEVoFQ7J0blT8/kMu2E=
-  /merge2/1.3.0:
+  /merge2/1.4.1:
     dev: true
     engines:
-      node: '>= 6'
+      node: '>= 8'
     resolution:
-      integrity: sha512-2j4DAdlBOkiSZIsaXk4mTE3sRS02yBHAtfy127xRV3bQUFqXkjHCHLW6Scv7DwNRbIWNHH8zpnz9zMaKXIdvYw==
+      integrity: sha512-8q7VEgMJW4J8tcfVPy8g09NcQwZdbwFEqhe/WZkoIzjn/3TGDwtOCYtXGxA3O8tPzpczCCDgv+P2P5y00ZJOOg==
   /methods/1.1.2:
     dev: true
     engines:
@@ -3900,7 +3900,7 @@ packages:
       browserify-aes: 1.2.0
       create-hash: 1.2.0
       evp_bytestokey: 1.0.3
-      pbkdf2: 3.0.17
+      pbkdf2: 3.1.0
       safe-buffer: 5.2.1
     dev: true
     resolution:
@@ -4003,7 +4003,7 @@ packages:
       node: '>=8'
     resolution:
       integrity: sha512-gDKb8aZMDeD/tZWs9P6+q0J9Mwkdl6xMV8TjnGP3qJVJ06bdMgkbBlLU8IdfOsIsFz2BW1rNVT3XuNEl8zPAvw==
-  /pbkdf2/3.0.17:
+  /pbkdf2/3.1.0:
     dependencies:
       create-hash: 1.2.0
       create-hmac: 1.1.7
@@ -4014,7 +4014,7 @@ packages:
     engines:
       node: '>=0.12'
     resolution:
-      integrity: sha512-U/il5MsrZp7mGg3mSQfn742na2T+1/vHDCG5/iTI3X9MKUuYUZVLQhyRsg06mCgDBTd57TxzgZt7P+fYfjRLtA==
+      integrity: sha512-wHMFZ6HTLGlB9f/WsQBs5OwMQJoLXYuJUzbA+j+hRBf7+Y8KcXpatzIviIcTy1OAyhWQp08nyiPO8Dnv0z4Sww==
   /picomatch/2.2.2:
     dev: true
     engines:
@@ -4577,10 +4577,12 @@ packages:
     dev: true
     resolution:
       integrity: sha512-0Vb/54WJ6k5v8sSWN09S0ora+Hnr+cX40r9F170nT+mSkaxltoE/7R3OrIdBSUv1OoiobH1QoWQbCnAO+e8J1A==
-  /serialize-javascript/2.1.2:
+  /serialize-javascript/3.1.0:
+    dependencies:
+      randombytes: 2.1.0
     dev: true
     resolution:
-      integrity: sha512-rs9OggEUF0V4jUSecXazOYsLfu7OGK2qIn3c7IPBiffz32XniEp/TX9Xmc9LQfK2nQ2QKHvZ2oygKUGU0lG4jQ==
+      integrity: sha512-JIJT1DGiWmIKhzRsG91aS6Ze4sFUrYbltlkg2onR5OrnNM02Kl/hnY/T4FN2omvyeBbQmMJv+K4cPOpGzOTFBg==
   /serve-static/1.14.1:
     dependencies:
       encodeurl: 1.0.2
@@ -4637,7 +4639,7 @@ packages:
   /shelljs/0.8.4:
     dependencies:
       glob: 7.1.6
-      interpret: 1.3.0
+      interpret: 1.4.0
       rechoir: 0.6.2
     dev: true
     engines:
@@ -4990,13 +4992,13 @@ packages:
       node: '>=8'
     resolution:
       integrity: sha512-a6sumDlzyHVJWb8+YofY4TW112G6p2FCPEAFk+59gIYHv3XHRhm9ltVQ9kli4hNWeQBwSpe8cRN25x0ROunMOw==
-  /terser-webpack-plugin/1.4.3_webpack@4.43.0:
+  /terser-webpack-plugin/1.4.4_webpack@4.43.0:
     dependencies:
       cacache: 12.0.4
       find-cache-dir: 2.1.0
       is-wsl: 1.1.0
       schema-utils: 1.0.0
-      serialize-javascript: 2.1.2
+      serialize-javascript: 3.1.0
       source-map: 0.6.1
       terser: 4.7.0
       webpack: 4.43.0_webpack@4.43.0
@@ -5008,7 +5010,7 @@ packages:
     peerDependencies:
       webpack: ^4.0.0
     resolution:
-      integrity: sha512-QMxecFz/gHQwteWwSo5nTc6UaICqN1bMedC5sMtUc7y3Ha3Q8y6ZO0iCR8pq4RJC8Hjf0FEPEHZqcMB/+DFCrA==
+      integrity: sha512-U4mACBHIegmfoEe5fdongHESNJWqsGU+W0S/9+BmYGVQDw1+c2Ow05TpMhxjPK1sRb7cuYq1BPl1e5YHJMTCqA==
   /terser/4.7.0:
     dependencies:
       commander: 2.20.3
@@ -5520,7 +5522,7 @@ packages:
       node-libs-browser: 2.2.1
       schema-utils: 1.0.0
       tapable: 1.1.3
-      terser-webpack-plugin: 1.4.3_webpack@4.43.0
+      terser-webpack-plugin: 1.4.4_webpack@4.43.0
       watchpack: 1.7.2
       webpack-sources: 1.4.3
     dev: true
@@ -5659,7 +5661,7 @@ packages:
       node: '>=6'
     resolution:
       integrity: sha512-Ux4ygGWsu2c7isFWe8Yu1YluJmqVhxqK2cLXNQA5AcC3QfbGNpM7fu0Y8b/z16pXLnFxZYvWhd3fhBY9DLmC6Q==
-  github.com/TSSSaver/eslint-config/006f5e1ab74b701265e36035eaf0ce5f3e7ea33a_52f41502df366788960944537e74575d:
+  github.com/TSSSaver/eslint-config/b1e04f5eca9e39344ed327949359414cc32b4990_52f41502df366788960944537e74575d:
     dependencies:
       '@typescript-eslint/eslint-plugin': 3.1.0_0e27ac235d5bbd2b6f9bd0553416eb5e
       '@typescript-eslint/parser': 3.1.0_eslint@7.1.0+typescript@3.9.3
@@ -5670,7 +5672,7 @@ packages:
       prettier: 2.0.5
       typescript: 3.9.3
     dev: true
-    id: github.com/TSSSaver/eslint-config/006f5e1ab74b701265e36035eaf0ce5f3e7ea33a
+    id: github.com/TSSSaver/eslint-config/b1e04f5eca9e39344ed327949359414cc32b4990
     name: '@tsssaver/eslint-config'
     peerDependencies:
       eslint: ^7.1.0
@@ -5678,8 +5680,8 @@ packages:
       typescript: ^3.9.3
     resolution:
       registry: 'https://registry.npmjs.org/'
-      tarball: 'https://codeload.github.com/TSSSaver/eslint-config/tar.gz/006f5e1ab74b701265e36035eaf0ce5f3e7ea33a'
-    version: 1.1.0
+      tarball: 'https://codeload.github.com/TSSSaver/eslint-config/tar.gz/b1e04f5eca9e39344ed327949359414cc32b4990'
+    version: 1.1.1
 specifiers:
   '@tsssaver/eslint-config': 'github:TSSSaver/eslint-config'
   '@types/node': ^12.12.43
