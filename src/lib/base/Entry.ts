@@ -1,5 +1,6 @@
 import Base from './Base';
 import Flags from '../bitfields/Flags';
+import ExtraFields from '../headers/ExtraField';
 
 export default class Entry extends Base {
   /** Version needed to extract (minimum) */
@@ -38,8 +39,8 @@ export default class Entry extends Base {
   /** Raw Extra Field */
   public extraFieldRaw!: Buffer;
 
-  // TODO: parse extra fields. needed for Zip64
-  public extraField: unknown;
+  /** Extra Field */
+  public extraField!: ExtraFields;
 
   /** File last modification (library specific) */
   get lastMod() {

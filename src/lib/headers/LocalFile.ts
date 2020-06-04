@@ -1,5 +1,6 @@
 import Entry from '../base/Entry';
 import Flags from '../bitfields/Flags';
+import ExtraField from './ExtraField';
 
 export default class LocalFile extends Entry {
   /** Local file header signature */
@@ -35,5 +36,6 @@ export default class LocalFile extends Entry {
 
     const extraFieldOffset = 30 + this.fileNameLength;
     this.extraFieldRaw = buf.slice(extraFieldOffset, extraFieldOffset + this.extraFieldLength);
+    this.extraField = new ExtraField(this.extraFieldRaw);
   }
 }

@@ -1,6 +1,7 @@
 import Entry from '../base/Entry';
 import InternalAttributes from '../bitfields/InternalAttributes';
 import Flags from '../bitfields/Flags';
+import ExtraField from './ExtraField';
 
 export enum HostOS {
   MSDOS = 0,
@@ -81,6 +82,7 @@ export default class CentralDirectoryEntry extends Entry {
 
     const extraFieldOffset = 46 + this.fileNameLength;
     this.extraFieldRaw = buf.slice(extraFieldOffset, extraFieldOffset + this.extraFieldLength);
+    this.extraField = new ExtraField(this.extraFieldRaw);
 
     const commentOffset = extraFieldOffset + this.extraFieldLength;
     this.comment = buf.slice(commentOffset, commentOffset + this.commentLength).toString();
