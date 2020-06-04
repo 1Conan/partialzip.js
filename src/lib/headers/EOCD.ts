@@ -38,9 +38,9 @@ export default class EOCD extends Base {
 
     this.cdStart = this.raw.readUInt16LE(6);
 
-    this.cdTotal = this.raw.readUInt16LE(8);
+    this.cdEntries = this.raw.readUInt16LE(8);
 
-    this.cdEntries = this.raw.readUInt16LE(10);
+    this.cdTotal = this.raw.readUInt16LE(10);
 
     this.cdSize = this.raw.readUInt32LE(12);
 
