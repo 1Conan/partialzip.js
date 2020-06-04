@@ -10,10 +10,10 @@ export default class EOCD extends Base {
   /** Disk where central directory starts */
   public cdStart: number;
 
-  /** Number of central directory records on this disk */
+  /** Total number of central directory records */
   public cdTotal: number;
 
-  /** Total number of central directory records */
+  /** Number of central directory records on this disk */
   public cdEntries: number;
 
   /** Size of central directory (bytes) */
