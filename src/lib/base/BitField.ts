@@ -7,7 +7,7 @@ export default class BitField {
   }
 
   public getBit(pos: number) {
-    return this.raw & (1 << pos);
+    return (this.raw >> pos) & 1;
   }
 
   public setBit(pos: number) {
