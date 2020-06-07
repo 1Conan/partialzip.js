@@ -1,12 +1,21 @@
 module.exports = {
+  extends: ['airbnb-typescript/base'],
   plugins: [
-    'eslint-plugin-tsdoc'
+    'eslint-plugin-tsdoc',
   ],
-  extends: [
-    '@tsssaver/eslint-config',
-  ],
+  parserOptions: {
+    project: './tsconfig.json',
+  },
+  settings: {
+    'import/parsers': {
+      '@typescript-eslint/parser': ['.ts', '.tsx'],
+    },
+    'import/resolver': {
+      'typescript': {}
+    },
+  },
   rules: {
-    'tsdoc/syntax': 'warn',
+    'tsdoc/syntax': 'error',
     'no-bitwise': 'off',
   },
 };
