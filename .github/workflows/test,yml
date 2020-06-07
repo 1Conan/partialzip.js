@@ -5,8 +5,8 @@ on:
   pull_request:
 
 jobs:
-  ESLint:
-    name: ESLint
+  Test:
+    name: Test
     runs-on: ubuntu-latest
     strategy:
       matrix:
