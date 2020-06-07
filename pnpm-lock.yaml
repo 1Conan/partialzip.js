@@ -11,6 +11,7 @@ devDependencies:
   ava: 3.8.2
   eslint: 7.2.0
   eslint-config-airbnb-typescript: 8.0.2_6ca896970fb61cf2a87ec767f0e7ebba
+  eslint-import-resolver-typescript: 2.0.0_27c0e52793a66261eb458d5e4121fa16
   eslint-plugin-import: 2.20.2_eslint@7.2.0
   eslint-plugin-tsdoc: 0.2.5
   prettier: 2.0.5
@@ -118,6 +119,10 @@ packages:
     dev: true
     resolution:
       integrity: sha512-8+KAKzEvSUdeo+kmqnKrqgeE+LcA0tjYWFY7RPProVYwnqDjukzO+3b6dLD56rYX5TdWejnEOLJYOIeh4CXKuA==
+  /@types/json5/0.0.29:
+    dev: true
+    resolution:
+      integrity: sha1-7ihweulOEdK4J7y+UnC86n8+ce4=
   /@types/minimatch/3.0.3:
     dev: true
     resolution:
@@ -1804,6 +1809,23 @@ packages:
     dev: true
     resolution:
       integrity: sha512-b8crLDo0M5RSe5YG8Pu2DYBj71tSB6OvXkfzwbJU2w7y8P4/yo0MyF8jU26IEuEuHF2K5/gcAJE3LhQGqBBbVg==
+  /eslint-import-resolver-typescript/2.0.0_27c0e52793a66261eb458d5e4121fa16:
+    dependencies:
+      debug: 4.1.1
+      eslint: 7.2.0
+      eslint-plugin-import: 2.20.2_eslint@7.2.0
+      is-glob: 4.0.1
+      resolve: 1.17.0
+      tiny-glob: 0.2.6
+      tsconfig-paths: 3.9.0
+    dev: true
+    engines:
+      node: '>=4'
+    peerDependencies:
+      eslint: '*'
+      eslint-plugin-import: '*'
+    resolution:
+      integrity: sha512-bT5Frpl8UWoHBtY25vKUOMoVIMlJQOMefHLyQ4Tz3MQpIZ2N6yYKEEIHMo38bszBNUuMBW6M3+5JNYxeiGFH4w==
   /eslint-module-utils/2.6.0:
     dependencies:
       debug: 2.6.9
@@ -2396,6 +2418,10 @@ packages:
       node: '>=8'
     resolution:
       integrity: sha512-BWICuzzDvDoH54NHKCseDanAhE3CeDorgDL5MT6LMXXj2WCnd9UC2szdk4AWLfjdgNBCXLUanXYcpBBKOSWGwg==
+  /globalyzer/0.1.4:
+    dev: true
+    resolution:
+      integrity: sha512-LeguVWaxgHN0MNbWC6YljNMzHkrCny9fzjmEUdnF1kQ7wATFD1RHFRqA1qxaX2tgxGENlcxjOflopBwj3YZiXA==
   /globby/10.0.2:
     dependencies:
       '@types/glob': 7.1.2
@@ -2424,6 +2450,10 @@ packages:
       node: '>=10'
     resolution:
       integrity: sha512-iH9RmgwCmUJHi2z5o2l3eTtGBtXek1OYlHrbcxOYugyHLmAsZrPj43OtHThd62Buh/Vv6VyCBD2bdyWcGNQqoQ==
+  /globrex/0.1.2:
+    dev: true
+    resolution:
+      integrity: sha512-uHJgbwAMwNFf5mLst7IWLNg14x1CkeqglJb/K3doi4dw6q2IvAAmM/Y81kevy83wP+Sst+nutFTYOGg3d1lsxg==
   /got/9.6.0:
     dependencies:
       '@sindresorhus/is': 0.14.0
@@ -5073,6 +5103,13 @@ packages:
       node: '>=0.6.0'
     resolution:
       integrity: sha512-60aV6sgJ5YEbzUdn9c8kYGIqOubPoUdqQCul3SBAsRCZ40s6Y5cMcrW4dt3/k/EsbLVJNl9n6Vz3fTc+k2GeKQ==
+  /tiny-glob/0.2.6:
+    dependencies:
+      globalyzer: 0.1.4
+      globrex: 0.1.2
+    dev: true
+    resolution:
+      integrity: sha512-A7ewMqPu1B5PWwC3m7KVgAu96Ch5LA0w4SnEN/LbDREj/gAD0nPWboRbn8YoP9ISZXqeNAlMvKSKoEuhcfK3Pw==
   /tmp/0.0.33:
     dependencies:
       os-tmpdir: 1.0.2
@@ -5174,6 +5211,15 @@ packages:
       typescript: '>=2.7'
     resolution:
       integrity: sha512-ISJJGgkIpDdBhWVu3jufsWpK3Rzo7bdiIXJjQc0ynKxVOVcg2oIrf2H2cejminGrptVc6q6/uynAHNCuWGbpVA==
+  /tsconfig-paths/3.9.0:
+    dependencies:
+      '@types/json5': 0.0.29
+      json5: 1.0.1
+      minimist: 1.2.5
+      strip-bom: 3.0.0
+    dev: true
+    resolution:
+      integrity: sha512-dRcuzokWhajtZWkQsDVKbWyY+jgcLC5sqJhg2PSgf4ZkH2aHPvaOY8YWGhmjb68b5qqTfasSsDO9k7RUiEmZAw==
   /tslib/1.13.0:
     dev: true
     resolution:
@@ -5690,6 +5736,7 @@ specifiers:
   cross-fetch: ^3.0.4
   eslint: ^7.2.0
   eslint-config-airbnb-typescript: ^8.0.2
+  eslint-import-resolver-typescript: ^2.0.0
   eslint-plugin-import: ^2.20.2
   eslint-plugin-tsdoc: ^0.2.5
   pako: ^1.0.11
