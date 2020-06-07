@@ -1,8 +1,12 @@
+.github/
+.vscode/
 docs/
 src/
+test/
 .gitignore
 .eslintrc.js
 .prettierrc.js
+pnpm-lock.yaml
 tsconfig.json
 typedoc.json
 webpack.config.js
