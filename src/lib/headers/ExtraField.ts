@@ -27,10 +27,10 @@ export default class ExtraFields extends Base {
     if (!field) return undefined;
 
     return {
-      uncompressedSize: field.data.readBigUInt64LE(0),
-      compressedSize: field.data.readBigUInt64LE(8),
-      offset: field.data.readBigUInt64LE(16),
-      diskNo: field.length === 28 ? field.data.readUInt32LE(24) : 0,
+      uncompressedSize: field.length >= 8 ? field.data.readBigUInt64LE(0) : BigInt(-1),
+      compressedSize: field.length >= 16 ? field.data.readBigUInt64LE(8) : BigInt(-1),
+      offset: field.length >= 24 ? field.data.readBigUInt64LE(16) : BigInt(-1),
+      diskNo: field.length >= 28 ? field.data.readUInt32LE(24) : -1,
     };
   }
 

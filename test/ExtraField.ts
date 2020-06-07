@@ -16,6 +16,6 @@ ava('Extra Fields', (test) => {
 
   test.is(fields.zip64!.compressedSize, BigInt(20));
   test.is(fields.zip64!.uncompressedSize, BigInt(20));
-  test.is(fields.zip64!.diskNo, 0);
+  test.is(fields.zip64!.diskNo, -1);
   test.is(fields.zip64!.offset, BigInt(0));
 });
