@@ -8,5 +8,6 @@ test/
 .prettierrc.js
 pnpm-lock.yaml
 tsconfig.json
+tsconfig.tsbuildinfo
 typedoc.json
 webpack.config.js
