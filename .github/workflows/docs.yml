@@ -8,20 +8,17 @@ jobs:
   Docs:
     name: Docs
     runs-on: ubuntu-latest
-    strategy:
-      matrix:
-        node-version: [10.x, 12.x, 14.x]
     steps:
       - uses: actions/checkout@v2
-      - name: Use Node.js ${{ matrix.node-version }}
+      - name: Use Node.js 14.x
         uses: actions/setup-node@v1
         with:
-          node-version: ${{ matrix.node-version }}
+          node-version: 14.x
       - name: CI Cache
         uses: actions/cache@v1
         with:
           path: node_modules
-          key: ${{ runner.os }}-${{ matrix.node-version }}-${{ hashFiles('**/pnpm-lock.yaml') }}
+          key: ${{ runner.os }}-14.x-${{ hashFiles('**/pnpm-lock.yaml') }}
       - name: Setup pnpm
         uses: pnpm/action-setup@v1.2.0
         with:
@@ -29,7 +26,7 @@ jobs:
           run_install: true
       - name: Build
         run: pnpm run build
-      - name: Public Docs
+      - name: Publish Docs
         # sauce: https://github.com/dirigeants/klasa/blob/master/.github/workflows/build.yml
         run: |
           #!/bin/bash
