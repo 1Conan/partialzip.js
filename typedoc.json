@@ -3,7 +3,6 @@
   "out": "docs",
   "exclude": [
     "src/bin/*.ts",
-    "src/lib/zlib/*",
     "test/*"
   ]
 }

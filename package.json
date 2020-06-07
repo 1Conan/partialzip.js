@@ -8,6 +8,7 @@
   "types": "build/index.d.ts",
   "scripts": {
     "build": "tsc",
+    "docs": "typedoc",
     "lint": "eslint --ext .js,.ts src",
     "lint:fix": "eslint --fix --ext .js,.ts src",
     "test": "ava --timeout=2m"
