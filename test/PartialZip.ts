@@ -42,3 +42,24 @@ ava('Zip URL', async (test) => {
 
   test.is(hash.digest('hex'), '08db0f1ab553457acfbd24b8c70de9867cc144df');
 });
+
+const eocd64Url = 'http://updates-http.cdn-apple.com/2020SpringFCS/fullrestores/001-09424/5B5CB4D4-A082-11EA-877A-87EDF1CFE6E8/iPhone11,8,iPhone12,1_13.5.1_17F80_Restore.ipsw';
+
+ava('Zip64 EOCD64 URL', async (test) => {
+  const zip = new PartialZip(eocd64Url);
+
+  await zip.init();
+
+  const fileInfo = zip.files.get('BuildManifest.plist')!;
+
+  test.truthy(fileInfo.extraField.zip64);
+
+  test.is(fileInfo.uncompressedSize, 0xffffffff);
+  test.is(fileInfo.extraField.zip64!.uncompressedSize, BigInt(431450));
+
+  const buf = await zip.get(fileInfo);
+
+  const hash = createHash('sha1').update(buf);
+
+  test.is(hash.digest('hex'), '68192b75bd113ff8f1249d9e4ca198c5c16f04f3');
+});

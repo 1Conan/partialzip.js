@@ -1,6 +1,8 @@
 import { bufferSplit, inflate } from '../../util/index';
 import CentralDirectoryEntry from '../headers/CDEntry';
 import EOCD from '../headers/EOCD';
+import EOCD64 from '../headers/EOCD64';
+import EOCD64Locator from '../headers/EOCD64Locator';
 import LocalFile from '../headers/LocalFile';
 
 export default abstract class Zip {
@@ -12,6 +14,12 @@ export default abstract class Zip {
 
   /** EOCD */
   public eocd?: EOCD;
+
+  /** EOCD64 */
+  public eocd64?: EOCD64;
+
+  /** EOCD64 Locator */
+  public eocd64Locator?: EOCD64Locator;
 
   /** Central Directory Entries */
   public files: Map<string, CentralDirectoryEntry> = new Map();
@@ -115,16 +123,36 @@ export default abstract class Zip {
 
   /** */
   protected async getEocd() {
-    const bufSize = Math.min(22 + 0xffff, this.size);
+    const bufSize = Math.min(22 + 0xff + 20, this.size);
     const data = await this.partialGet(this.size - bufSize, this.size);
     this.eocd = new EOCD(data);
+    if (this.eocd && this.eocd.cdOffset === 0xFFFFFFFF) {
+      this.eocd64Locator = new EOCD64Locator(data);
+      const eocd64Buf = await this.partialGet(
+        this.eocd64Locator!.offset,
+        this.size - 22 + 0xff + 20,
+      );
+
+      this.eocd64 = new EOCD64(eocd64Buf);
+    }
   }
 
   /** */
   protected async getCentralDir() {
+    let offset = BigInt(this.eocd!.cdOffset);
+    let size = BigInt(this.eocd!.cdSize);
+
+    if (offset === BigInt(0xFFFFFFFF) && this.eocd64) {
+      offset = this.eocd64.cdOffset;
+    }
+
+    if (size === BigInt(0xFFFFFFFF) && this.eocd64) {
+      size = this.eocd64.cdSize;
+    }
+
     const data = await this.partialGet(
-      this.eocd!.cdOffset,
-      this.eocd!.cdOffset + this.eocd!.cdSize,
+      offset,
+      offset + size,
     );
 
     const signature = Buffer.alloc(4);
