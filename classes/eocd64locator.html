@@ -3,7 +3,7 @@
 <head>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<title>BitField | partialzip</title>
+	<title>EOCD64Locator | partialzip</title>
 	<meta name="description" content="Documentation for partialzip">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" href="../assets/css/main.css">
@@ -56,10 +56,10 @@
 					<a href="../globals.html">Globals</a>
 				</li>
 				<li>
-					<a href="bitfield.html">BitField</a>
+					<a href="eocd64locator.html">EOCD64Locator</a>
 				</li>
 			</ul>
-			<h1>Class BitField</h1>
+			<h1>Class EOCD64Locator</h1>
 		</div>
 	</div>
 </header>
@@ -70,13 +70,10 @@
 				<h3>Hierarchy</h3>
 				<ul class="tsd-hierarchy">
 					<li>
-						<span class="target">BitField</span>
+						<a href="base.html" class="tsd-signature-type">Base</a>
 						<ul class="tsd-hierarchy">
 							<li>
-								<a href="flags.html" class="tsd-signature-type">Flags</a>
-							</li>
-							<li>
-								<a href="internalattributes.html" class="tsd-signature-type">InternalAttributes</a>
+								<span class="target">EOCD64Locator</span>
 							</li>
 						</ul>
 					</li>
@@ -89,22 +86,23 @@
 						<section class="tsd-index-section ">
 							<h3>Constructors</h3>
 							<ul class="tsd-index-list">
-								<li class="tsd-kind-constructor tsd-parent-kind-class"><a href="bitfield.html#constructor" class="tsd-kind-icon">constructor</a></li>
+								<li class="tsd-kind-constructor tsd-parent-kind-class tsd-is-overwrite"><a href="eocd64locator.html#constructor" class="tsd-kind-icon">constructor</a></li>
 							</ul>
 						</section>
 						<section class="tsd-index-section ">
 							<h3>Properties</h3>
 							<ul class="tsd-index-list">
-								<li class="tsd-kind-property tsd-parent-kind-class"><a href="bitfield.html#raw" class="tsd-kind-icon">raw</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class"><a href="eocd64locator.html#cddiskno" class="tsd-kind-icon">cd<wbr>Disk<wbr>No</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class"><a href="eocd64locator.html#disktotal" class="tsd-kind-icon">disk<wbr>Total</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class"><a href="eocd64locator.html#offset" class="tsd-kind-icon">offset</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-inherited"><a href="eocd64locator.html#raw" class="tsd-kind-icon">raw</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-static"><a href="eocd64locator.html#signature" class="tsd-kind-icon">signature</a></li>
 							</ul>
 						</section>
 						<section class="tsd-index-section ">
 							<h3>Methods</h3>
 							<ul class="tsd-index-list">
-								<li class="tsd-kind-method tsd-parent-kind-class"><a href="bitfield.html#clearbit" class="tsd-kind-icon">clear<wbr>Bit</a></li>
-								<li class="tsd-kind-method tsd-parent-kind-class"><a href="bitfield.html#getbit" class="tsd-kind-icon">get<wbr>Bit</a></li>
-								<li class="tsd-kind-method tsd-parent-kind-class"><a href="bitfield.html#setbit" class="tsd-kind-icon">set<wbr>Bit</a></li>
-								<li class="tsd-kind-method tsd-parent-kind-class"><a href="bitfield.html#tobitstring" class="tsd-kind-icon">to<wbr>Bitstring</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-static"><a href="eocd64locator.html#find" class="tsd-kind-icon">find</a></li>
 							</ul>
 						</section>
 					</div>
@@ -112,26 +110,27 @@
 			</section>
 			<section class="tsd-panel-group tsd-member-group ">
 				<h2>Constructors</h2>
-				<section class="tsd-panel tsd-member tsd-kind-constructor tsd-parent-kind-class">
+				<section class="tsd-panel tsd-member tsd-kind-constructor tsd-parent-kind-class tsd-is-overwrite">
 					<a name="constructor" class="tsd-anchor"></a>
 					<h3>constructor</h3>
-					<ul class="tsd-signatures tsd-kind-constructor tsd-parent-kind-class">
-						<li class="tsd-signature tsd-kind-icon">new <wbr>Bit<wbr>Field<span class="tsd-signature-symbol">(</span>num<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="bitfield.html" class="tsd-signature-type">BitField</a></li>
+					<ul class="tsd-signatures tsd-kind-constructor tsd-parent-kind-class tsd-is-overwrite">
+						<li class="tsd-signature tsd-kind-icon">new EOCD64<wbr>Locator<span class="tsd-signature-symbol">(</span>buf<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Buffer</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="eocd64locator.html" class="tsd-signature-type">EOCD64Locator</a></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
+								<p>Overrides <a href="base.html">Base</a>.<a href="base.html#constructor">constructor</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/1Conan/partialzip.js/blob/5fb0b7d/src/lib/base/BitField.ts#L3">lib/base/BitField.ts:3</a></li>
+									<li>Defined in <a href="https://github.com/1Conan/partialzip.js/blob/5fb0b7d/src/lib/headers/EOCD64Locator.ts#L14">lib/headers/EOCD64Locator.ts:14</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
 								<li>
-									<h5>num: <span class="tsd-signature-type">number</span></h5>
+									<h5>buf: <span class="tsd-signature-type">Buffer</span></h5>
 								</li>
 							</ul>
-							<h4 class="tsd-returns-title">Returns <a href="bitfield.html" class="tsd-signature-type">BitField</a></h4>
+							<h4 class="tsd-returns-title">Returns <a href="eocd64locator.html" class="tsd-signature-type">EOCD64Locator</a></h4>
 						</li>
 					</ul>
 				</section>
@@ -139,106 +138,104 @@
 			<section class="tsd-panel-group tsd-member-group ">
 				<h2>Properties</h2>
 				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class">
-					<a name="raw" class="tsd-anchor"></a>
-					<h3>raw</h3>
-					<div class="tsd-signature tsd-kind-icon">raw<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span></div>
+					<a name="cddiskno" class="tsd-anchor"></a>
+					<h3>cd<wbr>Disk<wbr>No</h3>
+					<div class="tsd-signature tsd-kind-icon">cd<wbr>Disk<wbr>No<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/1Conan/partialzip.js/blob/5fb0b7d/src/lib/base/BitField.ts#L3">lib/base/BitField.ts:3</a></li>
+							<li>Defined in <a href="https://github.com/1Conan/partialzip.js/blob/5fb0b7d/src/lib/headers/EOCD64Locator.ts#L8">lib/headers/EOCD64Locator.ts:8</a></li>
 						</ul>
 					</aside>
 					<div class="tsd-comment tsd-typography">
 						<div class="lead">
-							<p>raw number</p>
+							<p>CD Disk Number</p>
+						</div>
+					</div>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class">
+					<a name="disktotal" class="tsd-anchor"></a>
+					<h3>disk<wbr>Total</h3>
+					<div class="tsd-signature tsd-kind-icon">disk<wbr>Total<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/1Conan/partialzip.js/blob/5fb0b7d/src/lib/headers/EOCD64Locator.ts#L14">lib/headers/EOCD64Locator.ts:14</a></li>
+						</ul>
+					</aside>
+					<div class="tsd-comment tsd-typography">
+						<div class="lead">
+							<p>Total number of disks</p>
+						</div>
+					</div>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class">
+					<a name="offset" class="tsd-anchor"></a>
+					<h3>offset</h3>
+					<div class="tsd-signature tsd-kind-icon">offset<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">bigint</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/1Conan/partialzip.js/blob/5fb0b7d/src/lib/headers/EOCD64Locator.ts#L11">lib/headers/EOCD64Locator.ts:11</a></li>
+						</ul>
+					</aside>
+					<div class="tsd-comment tsd-typography">
+						<div class="lead">
+							<p>Zip64 EOCD Offset</p>
+						</div>
+					</div>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class tsd-is-inherited">
+					<a name="raw" class="tsd-anchor"></a>
+					<h3>raw</h3>
+					<div class="tsd-signature tsd-kind-icon">raw<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">Buffer</span></div>
+					<aside class="tsd-sources">
+						<p>Inherited from <a href="base.html">Base</a>.<a href="base.html#raw">raw</a></p>
+						<ul>
+							<li>Defined in <a href="https://github.com/1Conan/partialzip.js/blob/5fb0b7d/src/lib/base/Base.ts#L3">lib/base/Base.ts:3</a></li>
+						</ul>
+					</aside>
+					<div class="tsd-comment tsd-typography">
+						<div class="lead">
+							<p>Raw buffer</p>
+						</div>
+					</div>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class tsd-is-static">
+					<a name="signature" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagStatic">Static</span> signature</h3>
+					<div class="tsd-signature tsd-kind-icon">signature<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span><span class="tsd-signature-symbol"> = 117853008</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/1Conan/partialzip.js/blob/5fb0b7d/src/lib/headers/EOCD64Locator.ts#L5">lib/headers/EOCD64Locator.ts:5</a></li>
+						</ul>
+					</aside>
+					<div class="tsd-comment tsd-typography">
+						<div class="lead">
+							<p>Zip64 EOCD Locator Signature</p>
 						</div>
 					</div>
 				</section>
 			</section>
 			<section class="tsd-panel-group tsd-member-group ">
 				<h2>Methods</h2>
-				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
-					<a name="clearbit" class="tsd-anchor"></a>
-					<h3>clear<wbr>Bit</h3>
-					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
-						<li class="tsd-signature tsd-kind-icon">clear<wbr>Bit<span class="tsd-signature-symbol">(</span>pos<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-static">
+					<a name="find" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagStatic">Static</span> find</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-static">
+						<li class="tsd-signature tsd-kind-icon">find<span class="tsd-signature-symbol">(</span>buf<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Buffer</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">false</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">Buffer</span></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/1Conan/partialzip.js/blob/5fb0b7d/src/lib/base/BitField.ts#L17">lib/base/BitField.ts:17</a></li>
+									<li>Defined in <a href="https://github.com/1Conan/partialzip.js/blob/5fb0b7d/src/lib/headers/EOCD64Locator.ts#L29">lib/headers/EOCD64Locator.ts:29</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
 								<li>
-									<h5>pos: <span class="tsd-signature-type">number</span></h5>
+									<h5>buf: <span class="tsd-signature-type">Buffer</span></h5>
 								</li>
 							</ul>
-							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
-						</li>
-					</ul>
-				</section>
-				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
-					<a name="getbit" class="tsd-anchor"></a>
-					<h3>get<wbr>Bit</h3>
-					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
-						<li class="tsd-signature tsd-kind-icon">get<wbr>Bit<span class="tsd-signature-symbol">(</span>pos<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span></li>
-					</ul>
-					<ul class="tsd-descriptions">
-						<li class="tsd-description">
-							<aside class="tsd-sources">
-								<ul>
-									<li>Defined in <a href="https://github.com/1Conan/partialzip.js/blob/5fb0b7d/src/lib/base/BitField.ts#L9">lib/base/BitField.ts:9</a></li>
-								</ul>
-							</aside>
-							<h4 class="tsd-parameters-title">Parameters</h4>
-							<ul class="tsd-parameters">
-								<li>
-									<h5>pos: <span class="tsd-signature-type">number</span></h5>
-								</li>
-							</ul>
-							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">number</span></h4>
-						</li>
-					</ul>
-				</section>
-				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
-					<a name="setbit" class="tsd-anchor"></a>
-					<h3>set<wbr>Bit</h3>
-					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
-						<li class="tsd-signature tsd-kind-icon">set<wbr>Bit<span class="tsd-signature-symbol">(</span>pos<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
-					</ul>
-					<ul class="tsd-descriptions">
-						<li class="tsd-description">
-							<aside class="tsd-sources">
-								<ul>
-									<li>Defined in <a href="https://github.com/1Conan/partialzip.js/blob/5fb0b7d/src/lib/base/BitField.ts#L13">lib/base/BitField.ts:13</a></li>
-								</ul>
-							</aside>
-							<h4 class="tsd-parameters-title">Parameters</h4>
-							<ul class="tsd-parameters">
-								<li>
-									<h5>pos: <span class="tsd-signature-type">number</span></h5>
-								</li>
-							</ul>
-							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
-						</li>
-					</ul>
-				</section>
-				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
-					<a name="tobitstring" class="tsd-anchor"></a>
-					<h3>to<wbr>Bitstring</h3>
-					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
-						<li class="tsd-signature tsd-kind-icon">to<wbr>Bitstring<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span></li>
-					</ul>
-					<ul class="tsd-descriptions">
-						<li class="tsd-description">
-							<aside class="tsd-sources">
-								<ul>
-									<li>Defined in <a href="https://github.com/1Conan/partialzip.js/blob/5fb0b7d/src/lib/base/BitField.ts#L21">lib/base/BitField.ts:21</a></li>
-								</ul>
-							</aside>
-							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">string</span></h4>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">false</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">Buffer</span></h4>
 						</li>
 					</ul>
 				</section>
@@ -260,33 +257,9 @@
 					<li class=" tsd-kind-class">
 						<a href="base.html" class="tsd-kind-icon">Base</a>
 					</li>
-				</ul>
-				<ul class="current">
-					<li class="current tsd-kind-class">
+					<li class=" tsd-kind-class">
 						<a href="bitfield.html" class="tsd-kind-icon">Bit<wbr>Field</a>
-						<ul>
-							<li class=" tsd-kind-constructor tsd-parent-kind-class">
-								<a href="bitfield.html#constructor" class="tsd-kind-icon">constructor</a>
-							</li>
-							<li class=" tsd-kind-property tsd-parent-kind-class">
-								<a href="bitfield.html#raw" class="tsd-kind-icon">raw</a>
-							</li>
-							<li class=" tsd-kind-method tsd-parent-kind-class">
-								<a href="bitfield.html#clearbit" class="tsd-kind-icon">clear<wbr>Bit</a>
-							</li>
-							<li class=" tsd-kind-method tsd-parent-kind-class">
-								<a href="bitfield.html#getbit" class="tsd-kind-icon">get<wbr>Bit</a>
-							</li>
-							<li class=" tsd-kind-method tsd-parent-kind-class">
-								<a href="bitfield.html#setbit" class="tsd-kind-icon">set<wbr>Bit</a>
-							</li>
-							<li class=" tsd-kind-method tsd-parent-kind-class">
-								<a href="bitfield.html#tobitstring" class="tsd-kind-icon">to<wbr>Bitstring</a>
-							</li>
-						</ul>
 					</li>
-				</ul>
-				<ul class="after-current">
 					<li class=" tsd-kind-class">
 						<a href="centraldirectoryentry.html" class="tsd-kind-icon">Central<wbr>Directory<wbr>Entry</a>
 					</li>
@@ -296,9 +269,36 @@
 					<li class=" tsd-kind-class">
 						<a href="eocd64.html" class="tsd-kind-icon">EOCD64</a>
 					</li>
-					<li class=" tsd-kind-class">
+				</ul>
+				<ul class="current">
+					<li class="current tsd-kind-class">
 						<a href="eocd64locator.html" class="tsd-kind-icon">EOCD64<wbr>Locator</a>
+						<ul>
+							<li class=" tsd-kind-constructor tsd-parent-kind-class tsd-is-overwrite">
+								<a href="eocd64locator.html#constructor" class="tsd-kind-icon">constructor</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-class">
+								<a href="eocd64locator.html#cddiskno" class="tsd-kind-icon">cd<wbr>Disk<wbr>No</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-class">
+								<a href="eocd64locator.html#disktotal" class="tsd-kind-icon">disk<wbr>Total</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-class">
+								<a href="eocd64locator.html#offset" class="tsd-kind-icon">offset</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-class tsd-is-inherited">
+								<a href="eocd64locator.html#raw" class="tsd-kind-icon">raw</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-class tsd-is-static">
+								<a href="eocd64locator.html#signature" class="tsd-kind-icon">signature</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-static">
+								<a href="eocd64locator.html#find" class="tsd-kind-icon">find</a>
+							</li>
+						</ul>
 					</li>
+				</ul>
+				<ul class="after-current">
 					<li class=" tsd-kind-class">
 						<a href="entry.html" class="tsd-kind-icon">Entry</a>
 					</li>
