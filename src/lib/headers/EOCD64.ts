@@ -37,7 +37,7 @@ export default class EOCD64 extends Base {
   constructor(buf: Buffer) {
     const eocd = EOCD64.find(buf);
     if (!eocd) throw new Error('Zip64 EOCD not found');
-    super(buf);
+    super(eocd);
 
     this.size = this.raw.readBigUInt64LE(4);
 
