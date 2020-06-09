@@ -1,6 +1,5 @@
 {
   "compilerOptions": {
-    "incremental": true,
     "target": "esnext",
     "module": "commonjs",
     "declaration": true,
@@ -25,6 +24,7 @@
     "forceConsistentCasingInFileNames": true
   },
   "exclude": [
-    "test/**/*"
+    "test/",
+    "dist/"
   ]
 }
