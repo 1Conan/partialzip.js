@@ -8,7 +8,7 @@ devDependencies:
   '@types/yargs': 15.0.5
   '@typescript-eslint/eslint-plugin': 3.3.0_6fdb627c501e2fa3b09caaebf419fee9
   '@typescript-eslint/parser': 3.3.0_eslint@7.2.0+typescript@3.9.5
-  ava: 3.8.2
+  ava: 3.9.0
   eslint: 7.2.0
   eslint-config-airbnb-typescript: 8.0.2_d76dab8a8a0c85fcb40c2566f70ae5a2
   eslint-import-resolver-typescript: 2.0.0_f8b8b03d01478800d7e9e4bcfb71d8da
@@ -111,7 +111,7 @@ packages:
   /@types/glob/7.1.2:
     dependencies:
       '@types/minimatch': 3.0.3
-      '@types/node': 12.12.46
+      '@types/node': 12.12.47
     dev: true
     resolution:
       integrity: sha512-VgNIkxK+j7Nz5P7jvUZlRvhuPSmsEfS03b0alKcq5V/STUKAa3Plemsn5mrQUO7am6OErJ4rhGEGJbACclrtRA==
@@ -127,10 +127,6 @@ packages:
     dev: true
     resolution:
       integrity: sha512-tHq6qdbT9U1IRSGf14CL0pUlULksvY9OZ+5eEgl1N7t+OA3tGvNpxJCzuKQlsNgCVwbAs670L1vcVQi8j9HjnA==
-  /@types/node/12.12.46:
-    dev: true
-    resolution:
-      integrity: sha512-CnBSlOd7ASSHx1kJ2kNmzevfA0vuDNrrek6J+3tsmE+p0cRToFvD1pCpQ5+ynZlgPV2MGBzLKsD1bUS+h9B/qA==
   /@types/node/12.12.47:
     dev: true
     resolution:
@@ -455,6 +451,13 @@ packages:
     hasBin: true
     resolution:
       integrity: sha512-apwXVmYVpQ34m/i71vrApRrRKCWQnZZF1+npOD0WV5xZFfwWOmKGQ2RWlfdy9vWITsenisM8M0Qeq8agcFHNiQ==
+  /acorn/7.3.1:
+    dev: true
+    engines:
+      node: '>=0.4.0'
+    hasBin: true
+    resolution:
+      integrity: sha512-tLc0wSnatxAQHVHUapaHdz72pi9KUyHjq5KyHjGg9Y8Ifdc79pTh2XvI6I1/chZbnM7QtNKzh66ooDogPZSleA==
   /aggregate-error/3.0.1:
     dependencies:
       clean-stack: 2.2.0
@@ -702,16 +705,16 @@ packages:
     hasBin: true
     resolution:
       integrity: sha512-Wm6ukoaOGJi/73p/cl2GvLjTI5JM1k/O14isD73YML8StrH/7/lRFgmg8nICZgD3bZZvjwCGxtMOD3wWNAu8cg==
-  /ava/3.8.2:
+  /ava/3.9.0:
     dependencies:
       '@concordance/react': 2.0.0
-      acorn: 7.2.0
+      acorn: 7.3.1
       acorn-walk: 7.1.1
       ansi-styles: 4.2.1
       arrgv: 1.0.2
       arrify: 2.0.1
       callsites: 3.1.0
-      chalk: 4.0.0
+      chalk: 4.1.0
       chokidar: 3.4.0
       chunkd: 2.0.1
       ci-info: 2.0.0
@@ -721,16 +724,16 @@ packages:
       cli-truncate: 2.1.0
       code-excerpt: 2.1.1
       common-path-prefix: 3.0.0
-      concordance: 4.0.0
+      concordance: 5.0.0
       convert-source-map: 1.7.0
       currently-unhandled: 0.4.1
       debug: 4.1.1
       del: 5.1.0
-      emittery: 0.6.0
+      emittery: 0.7.0
       equal-length: 1.0.1
       figures: 3.2.0
       globby: 11.0.1
-      ignore-by-default: 1.0.1
+      ignore-by-default: 2.0.0
       import-local: 3.0.2
       indent-string: 4.0.0
       is-error: 2.2.2
@@ -761,10 +764,10 @@ packages:
       yargs: 15.3.1
     dev: true
     engines:
-      node: '>=10.18.0 <11 || >=12.14.0 <12.16.0 || >=12.16.0 <13 || >=13.5.0 <14 || >=14.0.0'
+      node: '>=10.18.0 <11 || >=12.14.0 <12.17.0 || >=12.17.0 <13 || >=14.0.0'
     hasBin: true
     resolution:
-      integrity: sha512-sph3oUsVTGsq4qbgeWys03QKCmXjkZUO3oPnFWXEW6g1SReCY9vuONGghMgw1G6VOzkg1k+niqJsOzwfO8h9Ng==
+      integrity: sha512-EnK5I/AX1U5nF4X1YG3QQYg2+jWnpvMW3z2y096DBvbwITkq9rB7Gu1j5clWcuizAJUlYbvcX6YfP+zkRFgC8Q==
   /balanced-match/1.0.0:
     dev: true
     resolution:
@@ -1076,6 +1079,15 @@ packages:
       node: '>=10'
     resolution:
       integrity: sha512-N9oWFcegS0sFr9oh1oz2d7Npos6vNoWW9HvtCg5N1KRFpUhaAhvTv5Y58g880fZaEYSNm3qDz8SU1UrGvp+n7A==
+  /chalk/4.1.0:
+    dependencies:
+      ansi-styles: 4.2.1
+      supports-color: 7.1.0
+    dev: true
+    engines:
+      node: '>=10'
+    resolution:
+      integrity: sha512-qwx12AxXe2Q5xQ43Ac//I6v5aXTipYrSESdOgzrN+9XjgEpyjpKuvSGaN4qE93f7TQTlerQQ8S+EQ0EyDoVL1A==
   /chardet/0.7.0:
     dev: true
     resolution:
@@ -1294,24 +1306,21 @@ packages:
       '0': node >= 0.8
     resolution:
       integrity: sha512-27HBghJxjiZtIk3Ycvn/4kbJk/1uZuJFfuPEns6LaEvpvG1f0hTea8lilrouyo9mVc2GWdcEZ8OLoGmSADlrCw==
-  /concordance/4.0.0:
+  /concordance/5.0.0:
     dependencies:
-      date-time: 2.1.0
+      date-time: 3.1.0
       esutils: 2.0.3
       fast-diff: 1.2.0
       js-string-escape: 1.0.1
-      lodash.clonedeep: 4.5.0
-      lodash.flattendeep: 4.4.0
-      lodash.islength: 4.0.1
-      lodash.merge: 4.6.2
-      md5-hex: 2.0.0
-      semver: 5.7.1
+      lodash: 4.17.15
+      md5-hex: 3.0.1
+      semver: 7.3.2
       well-known-symbols: 2.0.0
     dev: true
     engines:
-      node: '>=6.12.3 <7 || >=8.9.4 <9 || >=10.0.0'
+      node: '>=10.18.0 <11 || >=12.14.0 <13 || >=13.5.0'
     resolution:
-      integrity: sha512-l0RFuB8RLfCS0Pt2Id39/oCPykE01pyxgAFypWTlaGRgvLkZrtczZ8atEHpTeEIW+zYWXTBuA9cCSeEOScxReQ==
+      integrity: sha512-stOCz9ffg0+rytwTaL2njUOIyMfANwfwmqc9Dr4vTUS/x/KkVFlWx9Zlzu6tHYtjKxxaCF/cEAZgPDac+n35sg==
   /configstore/5.0.1:
     dependencies:
       dot-prop: 5.2.0
@@ -1479,14 +1488,14 @@ packages:
     dev: true
     resolution:
       integrity: sha1-WW6WmP0MgOEgOMK4LW6xs1tiJNk=
-  /date-time/2.1.0:
+  /date-time/3.1.0:
     dependencies:
       time-zone: 1.0.0
     dev: true
     engines:
-      node: '>=4'
+      node: '>=6'
     resolution:
-      integrity: sha512-/9+C44X7lot0IeiyfgJmETtRMhBidBYM2QFFIkGa0U1k+hSyY87Nw7PY3eDqpvCBm7I3WCSfPeZskW/YYq6m4g==
+      integrity: sha512-uqCUKXE5q1PNBXjPqvwhwJf9SwMoAHBgWJ6DcrnS5o+W2JOiIILl0JEdVD8SGujrNS02GGxgwAg2PN2zONgtjg==
   /debug/2.6.9:
     dependencies:
       ms: 2.0.0
@@ -1697,12 +1706,12 @@ packages:
     dev: true
     resolution:
       integrity: sha512-f4x70okzZbIQl/NSRLkI/+tteV/9WqL98zx+SQ69KbXxmVrmjwsNUPn/gYJJ0sHvEak24cZgHIPegRePAtA/xw==
-  /emittery/0.6.0:
+  /emittery/0.7.0:
     dev: true
     engines:
       node: '>=10'
     resolution:
-      integrity: sha512-6EMRGr9KzYWp8DzHFZsKVZBsMO6QhAeHMeHND8rhyBNCHKMLpgW9tZv40bwN3rAIKRS5CxcK8oLRKUJSB9h7yQ==
+      integrity: sha512-/kshvS+tZaggOPQDLGzXopumRRIzxciGILDlYTGIU+PmqbSfhn4wDVphFPry4H+2TNl2QxLduexPhxcWLULA5A==
   /emoji-regex/7.0.3:
     dev: true
     resolution:
@@ -2712,10 +2721,12 @@ packages:
     dev: true
     resolution:
       integrity: sha1-xg7taebY/bazEEofy8ocGS3FtQE=
-  /ignore-by-default/1.0.1:
+  /ignore-by-default/2.0.0:
     dev: true
+    engines:
+      node: '>=10 <11 || >=12 <13 || >=14'
     resolution:
-      integrity: sha1-SMptcvbGo68Aqa1K5odr44ieKwk=
+      integrity: sha512-+mQSgMRiFD3L3AOxLYOCxjIq4OnAmo5CIuC+lj5ehCJcPtV++QacEV7FdpzvYxH6DaOySWzQU6RR0lPLy37ckA==
   /ignore/4.0.6:
     dev: true
     engines:
@@ -3297,22 +3308,6 @@ packages:
       node: '>=8'
     resolution:
       integrity: sha512-t7hw9pI+WvuwNJXwk5zVHpyhIqzg2qTlklJOf0mVxGSbe3Fp2VieZcduNYjaLDoy6p9uGpQEGWG87WpMKlNq8g==
-  /lodash.clonedeep/4.5.0:
-    dev: true
-    resolution:
-      integrity: sha1-4j8/nE+Pvd6HJSnBBxhXoIblzO8=
-  /lodash.flattendeep/4.4.0:
-    dev: true
-    resolution:
-      integrity: sha1-+wMJF/hqMTTlvJvsDWngAT3f7bI=
-  /lodash.islength/4.0.1:
-    dev: true
-    resolution:
-      integrity: sha1-Tpho1FJXXXUK/9NYyXlUPcIO1Xc=
-  /lodash.merge/4.6.2:
-    dev: true
-    resolution:
-      integrity: sha512-0KpjqXRVvrYyCsX1swR/XTK0va6VQkQM6MNo7PqW77ByjAhoARA8EfrP1N4+KlKj8YS0ZUCtRT/YUuhyYDujIQ==
   /lodash/4.17.15:
     dev: true
     resolution:
@@ -3405,14 +3400,6 @@ packages:
       node: '>=10'
     resolution:
       integrity: sha512-OkeDaAZ/bQCxeFAozM55PKcKU0yJMPGifLwV4Qgjitu+5MoAfSQN4lsLJeXZ1b8w0x+/Emda6MZgXS1jvsapng==
-  /md5-hex/2.0.0:
-    dependencies:
-      md5-o-matic: 0.1.1
-    dev: true
-    engines:
-      node: '>=4'
-    resolution:
-      integrity: sha1-0FiOnxx0lUSS7NJKwKxs6ZfZLjM=
   /md5-hex/3.0.1:
     dependencies:
       blueimp-md5: 2.16.0
@@ -3421,10 +3408,6 @@ packages:
       node: '>=8'
     resolution:
       integrity: sha512-BUiRtTtV39LIJwinWBjqVsU9xhdnz7/i889V859IBFpuqGAj6LuOvHv5XLbgZ2R7ptJoJaEcxkv88/h25T7Ciw==
-  /md5-o-matic/0.1.1:
-    dev: true
-    resolution:
-      integrity: sha1-givM1l4RfFFPqxdrJZRdVBAKA8M=
   /md5.js/1.3.5:
     dependencies:
       hash-base: 3.1.0
@@ -5791,7 +5774,7 @@ specifiers:
   '@types/yargs': 15.0.5
   '@typescript-eslint/eslint-plugin': 3.3.0
   '@typescript-eslint/parser': 3.3.0
-  ava: 3.8.2
+  ava: 3.9.0
   cross-fetch: ^3.0.4
   eslint: 7.2.0
   eslint-config-airbnb-typescript: 8.0.2
