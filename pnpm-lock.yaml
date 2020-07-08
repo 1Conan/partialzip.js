@@ -15,7 +15,7 @@ devDependencies:
   eslint-plugin-import: 2.21.1_eslint@7.2.0
   eslint-plugin-tsdoc: 0.2.5
   prettier: 2.0.5
-  ts-loader: 7.0.5_typescript@3.9.5
+  ts-loader: 8.0.0_typescript@3.9.5
   ts-node: 8.10.2_typescript@3.9.5
   typedoc: 0.17.7_typescript@3.9.5
   typescript: 3.9.5
@@ -5222,7 +5222,7 @@ packages:
     dev: true
     resolution:
       integrity: sha512-c3zayb8/kWWpycWYg87P71E1S1ZL6b6IJxfb5fvsUgsf0S2MVGaDhDXXjDMpdCpfWXqptc+4mXwmiy1ypXqRAA==
-  /ts-loader/7.0.5_typescript@3.9.5:
+  /ts-loader/8.0.0_typescript@3.9.5:
     dependencies:
       chalk: 2.4.2
       enhanced-resolve: 4.1.1
@@ -5236,7 +5236,7 @@ packages:
     peerDependencies:
       typescript: '*'
     resolution:
-      integrity: sha512-zXypEIT6k3oTc+OZNx/cqElrsbBtYqDknf48OZos0NQ3RTt045fBIU8RRSu+suObBzYB355aIPGOe/3kj9h7Ig==
+      integrity: sha512-giEW167rtK1V6eX/DnXEtOgcawwoIp6hqznqYNNSmraUZOq36zMhwBq12JMlYhxf50BC58bscsTSKKtE42zAuw==
   /ts-node/8.10.2_typescript@3.9.5:
     dependencies:
       arg: 4.1.3
@@ -5783,7 +5783,7 @@ specifiers:
   eslint-plugin-tsdoc: 0.2.5
   pako: ^1.0.11
   prettier: 2.0.5
-  ts-loader: 7.0.5
+  ts-loader: 8.0.0
   ts-node: 8.10.2
   typedoc: 0.17.7
   typescript: 3.9.5
