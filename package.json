@@ -27,7 +27,7 @@
   },
   "homepage": "https://1conan.github.io/partialzip.js/",
   "devDependencies": {
-    "@types/node": "12.12.47",
+    "@types/node": "12.12.50",
     "@types/pako": "1.0.1",
     "@types/yargs": "15.0.5",
     "@typescript-eslint/eslint-plugin": "3.3.0",

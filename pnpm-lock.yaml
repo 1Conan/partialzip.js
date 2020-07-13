@@ -3,7 +3,7 @@ dependencies:
   pako: 1.0.11
   yargs: 15.3.1
 devDependencies:
-  '@types/node': 12.12.47
+  '@types/node': 12.12.50
   '@types/pako': 1.0.1
   '@types/yargs': 15.0.5
   '@typescript-eslint/eslint-plugin': 3.3.0_6fdb627c501e2fa3b09caaebf419fee9
@@ -131,6 +131,10 @@ packages:
     dev: true
     resolution:
       integrity: sha512-yzBInQFhdY8kaZmqoL2+3U5dSTMrKaYcb561VU+lDzAYvqt+2lojvBEy+hmpSNuXnPTx7m9+04CzWYOUqWME2A==
+  /@types/node/12.12.50:
+    dev: true
+    resolution:
+      integrity: sha512-5ImO01Fb8YsEOYpV+aeyGYztcYcjGsBvN4D7G5r1ef2cuQOpymjWNQi5V0rKHE6PC2ru3HkoUr/Br2/8GUA84w==
   /@types/normalize-package-data/2.4.0:
     dev: true
     resolution:
@@ -5769,7 +5773,7 @@ packages:
     resolution:
       integrity: sha512-Ux4ygGWsu2c7isFWe8Yu1YluJmqVhxqK2cLXNQA5AcC3QfbGNpM7fu0Y8b/z16pXLnFxZYvWhd3fhBY9DLmC6Q==
 specifiers:
-  '@types/node': 12.12.47
+  '@types/node': 12.12.50
   '@types/pako': 1.0.1
   '@types/yargs': 15.0.5
   '@typescript-eslint/eslint-plugin': 3.3.0
