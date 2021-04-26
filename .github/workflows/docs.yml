@@ -15,7 +15,7 @@ jobs:
         with:
           node-version: 14.x
       - name: CI Cache
-        uses: actions/cache@v1
+        uses: actions/cache@v2
         with:
           path: node_modules
           key: ${{ runner.os }}-14.x-${{ hashFiles('**/pnpm-lock.yaml') }}
