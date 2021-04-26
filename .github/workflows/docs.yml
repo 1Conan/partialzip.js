@@ -20,7 +20,7 @@ jobs:
           path: node_modules
           key: ${{ runner.os }}-14.x-${{ hashFiles('**/pnpm-lock.yaml') }}
       - name: Setup pnpm
-        uses: pnpm/action-setup@v1.2.0
+        uses: pnpm/action-setup@v1.2.1
         with:
           version: 5.1.2
           run_install: true
