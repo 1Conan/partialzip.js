@@ -14,7 +14,7 @@ devDependencies:
   eslint-import-resolver-typescript: 2.0.0_eb26b019bc380c812224a66cb8a2a431
   eslint-plugin-import: 2.21.1_eslint@7.4.0
   eslint-plugin-tsdoc: 0.2.5
-  prettier: 2.0.5
+  prettier: 2.8.8
   ts-loader: 8.0.0_typescript@3.9.5
   ts-node: 8.10.2_typescript@3.9.5
   typedoc: 0.17.8_typescript@3.9.5
@@ -4121,13 +4121,13 @@ packages:
       node: '>=4'
     resolution:
       integrity: sha1-6SQ0v6XqjBn0HN/UAddBo8gZ2Jc=
-  /prettier/2.0.5:
+  /prettier/2.8.8:
     dev: true
     engines:
       node: '>=10.13.0'
     hasBin: true
     resolution:
-      integrity: sha512-7PtVymN48hGcO4fGjybyBSIWDsLU4H4XlvOHfq91pz9kkGlonzwTfYkaIEwiRg/dAJF9YlbsduBAgtYLi+8cFg==
+      integrity: sha512-tdN8qQGvNjw4CHbY+XXk0JgCXn9QiF21a55rBe5LJAU+kDyC4WQn4+awm2Xfk2lQMk5fKup9XgzTZtGkjBdP9Q==
   /pretty-ms/7.0.0:
     dependencies:
       parse-ms: 2.1.0
@@ -5707,7 +5707,7 @@ specifiers:
   eslint-plugin-import: 2.21.1
   eslint-plugin-tsdoc: 0.2.5
   pako: ^1.0.11
-  prettier: 2.0.5
+  prettier: 2.8.8
   ts-loader: 8.0.0
   ts-node: 8.10.2
   typedoc: 0.17.8
